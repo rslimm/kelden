@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/services.dart';
+import 'package:kebhips/Pages/AdmissionDashboard.dart';
+import 'Pages/CardRow.dart';
 import 'Pages/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'Pages/Test.dart';
@@ -204,70 +206,6 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
 
 
 
-/*
-
-
-    Widget myGridItems (String gridName,  Color color1, Color color2){
-      return Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24.0),
-            gradient: new LinearGradient(
-              colors: [
-                color1,
-                color2,
-              ],
-              begin: Alignment.centerLeft,
-              end:  new Alignment(1.0, 1.0),
-            )
-        ),
-        child: Stack(
-          children: <Widget>[
-            Opacity(
-              opacity: 1.0,
-              child: Container(
-                decoration: new BoxDecoration(
-                    borderRadius: BorderRadius.circular(24.0),
-                    image: DecorationImage(
-                        image: AssetImage('assets/s1.jpg'),
-                        fit: BoxFit.fill)
-                ),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    //Container(child: Text("Job", style: TextStyle(color: Colors.white, fontSize: 16),)),
-                    //SizedBox(width: 10.0),
-                    //Container(child: Icon(Icons.print, color: Colors.white, size: 50.0,)),
-                    //SizedBox(width: 10.0),
-                    //Container(child: Text("Guide", style: TextStyle(color: Colors.white, fontSize: 16),)),
-                  ],
-                ),
-                ),
-                SizedBox(height: 10.0),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: Text(gridName, style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),),
-                ),
-              ],
-            )
-          ],
-        ),
-      );
-    }
-
-    */
-
-
-
-
-
-
-
-
 
     String gridImage;
     String gridName;
@@ -323,11 +261,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => TimeTablePage()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.cyan,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                          Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.table_chart, size: 50.0, color: Colors.cyanAccent,)),
+                          Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.table_chart, size: 50.0, color: Colors.white,)),
                           new Text('Programmes', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -341,14 +279,14 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => AdmissionDashboard()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.deepPurple,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.school, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.school, size: 50.0, color: Colors.white,)),
                         new Text('Admission', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -365,11 +303,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.orange[300],
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.account_balance_wallet, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.account_balance_wallet, size: 50.0, color: Colors.white,)),
                         new Text('Pensions', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -386,11 +324,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.pinkAccent,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.person_add, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.person_add, size: 50.0, color: Colors.white,)),
                         new Text('Inscription', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -407,11 +345,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.teal[900],
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.leak_add, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.leak_add, size: 50.0, color: Colors.white,)),
                         new Text('Cours en ligne', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -428,11 +366,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.green[600],
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.event, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.event, size: 50.0, color: Colors.white,)),
                         new Text('Evènements', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -449,11 +387,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.cyanAccent,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.supervised_user_circle, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.supervised_user_circle, size: 50.0, color: Colors.white,)),
                         new Text('Partenaires', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -470,11 +408,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.teal,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.accessibility_new, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.accessibility_new, size: 50.0, color: Colors.white,)),
                         new Text('Réseaux Sociaux', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -491,11 +429,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.deepOrange,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.picture_in_picture, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.picture_in_picture, size: 50.0, color: Colors.white,)),
                         new Text('Galerie', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
@@ -512,11 +450,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.amberAccent.withOpacity(0.7),
+                    color: Colors.indigoAccent,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.message, size: 50.0, color: Colors.cyanAccent,)),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.message, size: 50.0, color: Colors.white,)),
                         new Text('Laisser un message', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],

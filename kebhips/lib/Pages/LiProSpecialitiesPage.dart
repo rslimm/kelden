@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
-class BtsSpecialitiesPage extends StatelessWidget {
+class LiProSpecialitiesPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _ListPageState extends State<ListPage> {
       subtitle: Row(
         children: <Widget>[
 
-         /*
+          /*
 
           Expanded(
               flex: 1,
@@ -68,7 +68,7 @@ class _ListPageState extends State<ListPage> {
 
          */
 
-         /*
+          /*
 
           Expanded(
             flex: 4,
@@ -493,7 +493,7 @@ List getCourses() {
             "Débouchés:\n"
             "Texte"
     ),
-    
+
   ];
 }
 

@@ -14,7 +14,7 @@ class _TimeTablePageState extends State<TimeTablePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text('Programes'),
+        title: Text('Programmes'),
       ),
       drawer: AppDrawer(),
       body: new Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kebhips/Model/ProgrammesDetails.dart';
+import 'package:kebhips/Pages/TimeTablePage1.dart';
 import 'ProgrammesSumary.dart';
 import 'Separator.dart';
 import 'TextStyle.dart';
@@ -77,13 +78,18 @@ class DetailPage extends StatelessWidget {
                 new Separator(),
                 new Text(
                     programmesDetails.description, style: Style.commonTextStyle),
+                new SizedBox(
+                  height: 10.0,
+                ),
               ],
             ),
           ),
+          programmesDetails.buttonTheme,
         ],
       ),
     );
   }
+
 
   Container _getToolbar(BuildContext context) {
     return new Container(
