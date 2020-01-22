@@ -55,6 +55,7 @@ class _TimeTablePage2State extends State<TimeTablePage2> {
             minWidth: 200.0,
             height: 50.0,
             child: RaisedButton(
+
                 color: Colors.amber,
                 child: Text("Voir nos spécialités", style: TextStyle(fontWeight: FontWeight.w500),),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0),
@@ -111,7 +112,7 @@ class _TimeTablePage2State extends State<TimeTablePage2> {
           id: "5",
           name: "MASTER Pro",
           time: "Cinq ans",
-          description: "Message concernant le MASTER professionnel.",
+          description: "En cours...",
           image: "assets/img/mercury.png",
           picture: "https://c1.staticflickr.com/9/8105/8497927473_2845ae671e_b.jpg",
           buttonTheme: ButtonTheme(
@@ -124,7 +125,7 @@ class _TimeTablePage2State extends State<TimeTablePage2> {
                   side: BorderSide(color: Colors.amber),
                 ),
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                 }),
           )
       ),
@@ -132,7 +133,7 @@ class _TimeTablePage2State extends State<TimeTablePage2> {
           id: "6",
           name: "DIPLOME MINFOP",
           time: "Un an",
-          description: "Description sur le diplôme du MINFOP.",
+          description: "Il s'agit ici d'un ensemble de formations d'une durée de un an proposée par le MINEFOP (Ministère de l'Emploi et de la Formation Professionel) et donnant un accès direct à l'emploi.",
           image: "assets/img/mars.png",
           picture: "https://c1.staticflickr.com/9/8105/8497927473_2845ae671e_b.jpg",
           buttonTheme: ButtonTheme(

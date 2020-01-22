@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
+import 'package:kebhips/popup/popup.dart';
+import 'package:kebhips/popup/popup_content.dart';
 //void main() => runApp(MyApp());
 
 class AdmissionDashboard extends StatelessWidget {
@@ -58,7 +60,6 @@ class DashBoard extends StatelessWidget {
                     createGridItem(4),
                     createGridItem(5),
                     createGridItem(6),
-                    createGridItem(7),
                   ],
                 ),
               ),
@@ -74,49 +75,95 @@ class DashBoard extends StatelessWidget {
     var icondata = Icons.school;
     var text = "";
 
+    //ici les variable a charger pour chaque cycle
+    String pension="";
+    String condition="";
+    String niveau="";
+    String document="";
+    String Inscription = "";
+    String PremiereTranche="";
+    String DeuxiemeTranche = "";
+    String TroisiemeTranche="";
+    String Total ="";
+
     switch (position) {
       case 0:
         color = Colors.cyan;
         icondata = Icons.school;
         text = "BTS";
+
+        condition = "";
+        niveau = " BAC/GCE ou tout\n autre diplôme équivalent";
+        document = "\n\n"
+            "Copie conforme certifiée de (Acte de naissance, Dernier diplôme, CNI), quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat";
+
+        Inscription = "  20.000 CFA";
+        PremiereTranche = "  150.000 CFA";
+        DeuxiemeTranche = "  90.000 CFA";
+        TroisiemeTranche = "  60.000 CFA";
+        Total = "  320.000 CFA";
+
         break;
       case 1:
         color = Colors.deepPurple;
-
         icondata = Icons.school;
         text = "HND";
+
+        condition = "Here's are the conditions for HND";
+        niveau = "BAC/GCE ou tout autre diplôme équivalent";
+        document = "CNI";
+
+        Inscription = "  20.000 CFA";
+        PremiereTranche = "  150.000 CFA";
+        DeuxiemeTranche = "  90.000 CFA";
+        TroisiemeTranche = "  60.000 CFA";
+        Total = "  320.000 CFA";
 
         break;
       case 2:
         color = Colors.orange[300];
         icondata = Icons.school;
         text = "LIPRO";
+
+        condition = "Conditions pour la Licence Pro";
+        niveau = "BTS ou tout autre diplôme équivalent";
+        document = "CNI";
+
+        Inscription = "20.000 CFA";
+        PremiereTranche = "150.000 CFA";
+        DeuxiemeTranche = "100.000 CFA";
+        TroisiemeTranche = "50.000 CFA";
+        Total = "320.000 CFA";
         break;
       case 3:
         color = Colors.pinkAccent;
         icondata = Icons.school;
         text = "BACHELOR";
 
-        break;
-      case 4:
-        color = Colors.teal[900];
-        icondata = Icons.school;
-        text = "MASTER PRO";
+        condition = "Here's are the conditions for Bachelor";
+        niveau = "HND / BTS ou tout autre diplôme équivalent";
+        document = "CNI";
+
+        Inscription = "20.000 CFA";
+        PremiereTranche = "150.000 CFA";
+        DeuxiemeTranche = "100.000 CFA";
+        TroisiemeTranche = "50.000 CFA";
+        Total = "320.000 CFA";
 
         break;
-      case 5:
+      case 4:
         color = Colors.green[600];
         icondata = Icons.school;
         text = "D. MINFOP";
 
         break;
-      case 6:
+      case 5:
         color = Colors.cyanAccent;
         icondata = Icons.school;
         text = "CERTIFICATIONS";
 
         break;
-      case 7:
+      case 6:
         color = Colors.teal;
         icondata = Icons.school;
         text = "A LA CARTE";
@@ -135,8 +182,8 @@ class DashBoard extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text("Selected Item $position")));
+              //gestion du pupop text
+              showPopup(context, _popupBody(condition, niveau, document, pension, Inscription, PremiereTranche, DeuxiemeTranche, TroisiemeTranche, Total), '$text');
             },
             child: Center(
               child: Column(
@@ -197,6 +244,195 @@ class ShapesPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
+
+
+
+
+
+
+
+//fonction qui gere le popup
+showPopup(BuildContext context, Widget widget, String title,
+    {BuildContext popupContext}) {
+  Navigator.push(
+    context,
+    PopupLayout(
+      top: 30,
+      left: 30,
+      right: 30,
+      bottom: 50,
+      child: PopupContent(
+        content: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.blue[900],
+            title: Text(title),
+            leading: new Builder(builder: (context) {
+              return IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  try {
+                    Navigator.pop(context); //close the popup
+                  } catch (e) {}
+                },
+              );
+            }),
+            brightness: Brightness.light,
+          ),
+          resizeToAvoidBottomPadding: false,
+
+          body: widget,
+        ),
+      ),
+    ),
+  );
+}
+
+
+Widget _popupBody(String condition,String niveau,String document, String pension, String Inscription, String PremiereTranche, String DeuxiemeTranche, String TroisiemeTranche, String Total) {
+  return ListView(
+    padding: EdgeInsets.all(12),
+
+
+    children: <Widget>[
+      Row(
+        children: <Widget>[
+          AutoSizeText("Conditions d'admission:",style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20
+          ),),
+
+          AutoSizeText("$condition",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Niveau requis :",style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20
+          ),),
+
+          AutoSizeText("$niveau",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Documents requis:",style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20
+          ),),
+
+          AutoSizeText("$document",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 25.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Pension:", textAlign: TextAlign.end,style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$pension",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Inscription:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Inscription",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Première Tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$PremiereTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Deuxième Tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$DeuxiemeTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Troisième Tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$TroisiemeTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 35.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("          Total:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Total",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+    ],
+
+  );
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -287,23 +523,9 @@ Widget _createHeader(){
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/s1.jpg'))
+              image: AssetImage('assets/logo-off-kelden-v.png'))
       ),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            bottom: 12.0,
-            left: 16.0,
-            child: Text("KEBHIPS",
-              style: TextStyle(
-                  color: Colors.amber,
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.w500
-              ),
-            ),
-          )
-        ],
-      ));
+  );
 }
 
 

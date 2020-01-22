@@ -580,25 +580,13 @@ Widget _createDrawerItem({
 
 Widget _createHeader(){
   return DrawerHeader(
+
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/s1.jpg'))
+              image: AssetImage('assets/logo-off-kelden-v.png'))
       ),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            bottom: 12.0,
-            left: 16.0,
-            child: Text("KEBHIPS",
-              style: TextStyle(
-                  color: Colors.amber,
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.w500
-              ),
-            ),
-          )
-        ],
-      ));
+
+  );
 }

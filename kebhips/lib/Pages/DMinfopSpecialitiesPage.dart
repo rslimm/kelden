@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
-class BachelorSpecialitiesPage extends StatelessWidget {
+class DMinfopSpecialitiesPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -163,7 +163,7 @@ class _ListPageState extends State<ListPage> {
       backgroundColor: Color(0xFF736AB7),
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: new Text("Spécilialités BTS", textAlign: TextAlign.center,),
+        title: new Text("Spécilialités D MINEFOP", textAlign: TextAlign.center,),
       ),
       drawer: AppDrawer(),
       body: makeBody,
@@ -580,11 +580,11 @@ Widget _createDrawerItem({
 
 Widget _createHeader(){
   return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/s1.jpg'))
-      ),
+    margin: EdgeInsets.zero,
+    padding: EdgeInsets.zero,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/logo-off-kelden-v.png'))
+    ),
   );
 }

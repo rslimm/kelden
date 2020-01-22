@@ -27,6 +27,7 @@ dependencies:
   flip_card: ^0.4.4
   carousel_pro: ^1.0.0
   flutter_icons: ^1.0.0+1
+  auto_size_text: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,24 @@ flutter:
      - assets/img/mercury.png
      - assets/img/moon.png
      - assets/img/neptune.png
+     - assets/logo-off-kelden-v.png
+     - assets/img1.jpg
+     - assets/img2.jpg
+     - assets/img3.jpg
+     - assets/img4.jpg
+     - assets/img5.jpg
+     - assets/img6.jpg
+     - assets/img7.jpg
+     - assets/img8.jpg
+     - assets/img9.jpg
+     - assets/img10.jpg
+     - assets/img11.jpg
+     - assets/img12.jpg
+     - assets/img13.jpg
+     - assets/img14.jpg
+     - assets/img15.jpg
+     - assets/img16.jpg
+     - assets/img17.jpg
 
 
 

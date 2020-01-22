@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/services.dart';
 import 'package:kebhips/Pages/AdmissionDashboard.dart';
-import 'Pages/CardRow.dart';
-import 'Pages/HomePage.dart';
+import 'package:kebhips/Pages/GalleryPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'Pages/Test.dart';
 import 'Pages/TimeTablePage1.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 
 
@@ -126,23 +124,9 @@ Widget _createHeader(){
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/s1.jpg'))
+            image: AssetImage('assets/logo-off-kelden-v.png'))
       ),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            bottom: 12.0,
-            left: 16.0,
-            child: Text("KEBHIPS",
-            style: TextStyle(
-              color: Colors.amber,
-              fontSize: 50.0,
-              fontWeight: FontWeight.w500
-            ),
-            ),
-          )
-        ],
-      ));
+  );
 }
 
 
@@ -212,9 +196,8 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
     return new Scaffold(
 
       appBar: AppBar(
-        title: Text('Kelden Bilingual Higher Institute of Professional Studies\n'
-                    'Accord N° 18-1020/L/MINSUP/SG/DDES/SD-ESUP/SDA/LMN du 03/12/2018\n'
-                    'Arrêté N° 078/MINEFOP/SG/DFOP/SDGSF/SACD du 13/03/2017', textAlign: TextAlign.center, style: TextStyle(fontSize: 9.5,),),
+        backgroundColor: Colors.blue[900],
+        title: Text('K E B H I P S', textAlign: TextAlign.center, style: TextStyle(fontSize: 40.0,),),
       ),
 
       backgroundColor: Colors.blue[200],
@@ -303,27 +286,6 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.orange[300],
-                    elevation: 4.5,
-                    child: Column(
-                      children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.account_balance_wallet, size: 50.0, color: Colors.white,)),
-                        new Text('Pensions', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              Container(
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()));
-                  },
-                  child: new Card(
                     color: Colors.pinkAccent,
                     elevation: 4.5,
                     child: Column(
@@ -358,26 +320,6 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                 ),
               ),
 
-              Container(
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()));
-                  },
-                  child: new Card(
-                    color: Colors.green[600],
-                    elevation: 4.5,
-                    child: Column(
-                      children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.event, size: 50.0, color: Colors.white,)),
-                        new Text('Evènements', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-
-                      ],
-                    ),
-                  ),
-                ),
-              ),
 
               Container(
                 child: GestureDetector(
@@ -387,18 +329,19 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                         MaterialPageRoute(builder: (context) => Home()));
                   },
                   child: new Card(
-                    color: Colors.cyanAccent,
+                    color: Colors.amber,
                     elevation: 4.5,
                     child: Column(
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.supervised_user_circle, size: 50.0, color: Colors.white,)),
-                        new Text('Partenaires', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.accessibility_new, size: 50.0, color: Colors.white,)),
+                        new Text('Vie au Campus', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
                     ),
                   ),
                 ),
               ),
+
 
               Container(
                 child: GestureDetector(
@@ -426,7 +369,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => GalleryPage()));
                   },
                   child: new Card(
                     color: Colors.deepOrange,
