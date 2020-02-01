@@ -6,7 +6,6 @@ List imageData = [
   image3,
   image4,
   image5,
-  image6,
   image7,
   image8,
   image9,
@@ -16,5 +15,4 @@ List imageData = [
   image13,
   image14,
   image15,
-  image16,
 ];

@@ -175,32 +175,10 @@ class _ListPageState extends State<ListPage> {
 List getCourses() {
   return [
     Course(
-        title: "Administration des Collectivités Térritoriales",
+        title: "Gestion des Collectivités Térritoriales",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 20,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Comptabilité et Finances publiques",
-        //level: "Beginner",
-        //indicatorValue: 0.33,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Fiscalité des Collectivités Térritoriales",
-        //level: "Intermidiate",
-        //indicatorValue: 0.66,
-        price: 30,
         content:
         "Objectifs:\n"
             "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
@@ -516,10 +494,6 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
           _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
@@ -528,11 +502,7 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
+          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -544,9 +514,9 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
+          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
           ListTile(
-            title: Text('KEBHIPS'),
+            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
             onTap: (){
 
             },

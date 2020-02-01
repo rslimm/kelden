@@ -21,9 +21,10 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    double longueur = MediaQuery.of(context).size.height;
+    double largeur = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -80,11 +81,23 @@ class DashBoard extends StatelessWidget {
     String condition="";
     String niveau="";
     String document="";
+
+
+    String Specialites="";
+
+
     String Inscription = "";
     String PremiereTranche="";
     String DeuxiemeTranche = "";
     String TroisiemeTranche="";
     String Total ="";
+
+
+    String InscriptionMS = "";
+    String PremiereTrancheMS ="";
+    String DeuxiemeTrancheMS = "";
+    String TroisiemeTrancheMS ="";
+    String TotalMS ="";
 
     switch (position) {
       case 0:
@@ -93,15 +106,20 @@ class DashBoard extends StatelessWidget {
         text = "BTS";
 
         condition = "";
-        niveau = " BAC/GCE ou tout\n autre diplôme équivalent";
-        document = "\n\n"
-            "Copie conforme certifiée de (Acte de naissance, Dernier diplôme, CNI), quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat";
-
+        niveau = " BAC/GCE ou tout autre diplôme équivalent";
+        document =  "Copie conforme certifiée de (Acte de naissance, Dernier diplôme, CNI), quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat";
         Inscription = "  20.000 CFA";
-        PremiereTranche = "  150.000 CFA";
-        DeuxiemeTranche = "  90.000 CFA";
-        TroisiemeTranche = "  60.000 CFA";
-        Total = "  320.000 CFA";
+        PremiereTranche = "  100.000 CFA";
+        DeuxiemeTranche = "  100.000 CFA";
+        TroisiemeTranche = "  70.000 CFA";
+        Total = "  290.000 CFA";
+
+        Specialites = "    MEDICO-SANITAIRES";
+        InscriptionMS = "  20.000 CFA";
+        PremiereTrancheMS = "  100.000 CFA";
+        DeuxiemeTrancheMS = "  100.000 CFA";
+        TroisiemeTrancheMS = " 100.000 CFA";
+        TotalMS = "  320.000 CFA";
 
         break;
       case 1:
@@ -109,15 +127,15 @@ class DashBoard extends StatelessWidget {
         icondata = Icons.school;
         text = "HND";
 
-        condition = "Here's are the conditions for HND";
+        condition = "Here are the conditions for HND";
         niveau = "BAC/GCE ou tout autre diplôme équivalent";
         document = "CNI";
 
         Inscription = "  20.000 CFA";
-        PremiereTranche = "  150.000 CFA";
-        DeuxiemeTranche = "  90.000 CFA";
-        TroisiemeTranche = "  60.000 CFA";
-        Total = "  320.000 CFA";
+        PremiereTranche = "  100.000 CFA";
+        DeuxiemeTranche = "  100.000 CFA";
+        TroisiemeTranche = "  70.000 CFA";
+        Total = "  290.000 CFA";
 
         break;
       case 2:
@@ -140,7 +158,7 @@ class DashBoard extends StatelessWidget {
         icondata = Icons.school;
         text = "BACHELOR";
 
-        condition = "Here's are the conditions for Bachelor";
+        condition = "Here are the conditions for Bachelor";
         niveau = "HND / BTS ou tout autre diplôme équivalent";
         document = "CNI";
 
@@ -183,7 +201,7 @@ class DashBoard extends StatelessWidget {
           child: InkWell(
             onTap: () {
               //gestion du pupop text
-              showPopup(context, _popupBody(condition, niveau, document, pension, Inscription, PremiereTranche, DeuxiemeTranche, TroisiemeTranche, Total), '$text');
+              showPopup(context, _popupBody(condition, niveau, document, pension, Specialites, Inscription, PremiereTranche, DeuxiemeTranche, TroisiemeTranche, Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS), '$text');
             },
             child: Center(
               child: Column(
@@ -288,27 +306,29 @@ showPopup(BuildContext context, Widget widget, String title,
 }
 
 
-Widget _popupBody(String condition,String niveau,String document, String pension, String Inscription, String PremiereTranche, String DeuxiemeTranche, String TroisiemeTranche, String Total) {
+Widget _popupBody(String condition,String niveau,String document, String pension, String Specialites, String Inscription, String PremiereTranche, String DeuxiemeTranche, String TroisiemeTranche, String Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS) {
   return ListView(
     padding: EdgeInsets.all(12),
 
 
     children: <Widget>[
-      Row(
+      Column(
         children: <Widget>[
           AutoSizeText("Conditions d'admission:",style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
           ),),
 
-          AutoSizeText("$condition",style: TextStyle(
+          Container(
+            child: AutoSizeText("$condition",style: TextStyle(
 
-          ),),
+            ),),
+          ),
 
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
           AutoSizeText("Niveau requis :",style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -322,7 +342,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
           AutoSizeText("Documents requis:",style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -339,8 +359,8 @@ Widget _popupBody(String condition,String niveau,String document, String pension
       Row(
         children: <Widget>[
           AutoSizeText("Pension:", textAlign: TextAlign.end,style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
           ),),
 
           AutoSizeText("$pension",style: TextStyle(
@@ -405,7 +425,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
 
         ],
       ),
-      SizedBox(height: 35.0,),
+      SizedBox(height: 25.0,),
       Row(
         children: <Widget>[
           AutoSizeText("          Total:", textAlign: TextAlign.end,style: TextStyle(
@@ -414,7 +434,90 @@ Widget _popupBody(String condition,String niveau,String document, String pension
           ),),
 
           AutoSizeText("$Total",style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),),
 
+        ],
+      ),
+      SizedBox(height: 35.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Spécialités:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Specialites",style: TextStyle(
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Inscription:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$InscriptionMS",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Première tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$PremiereTrancheMS",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Deuxième Tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$DeuxiemeTrancheMS",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("Troisième Tranche:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$TroisiemeTrancheMS",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 25.0,),
+      Row(
+        children: <Widget>[
+          AutoSizeText("          Total:", textAlign: TextAlign.end,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$TotalMS",style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),),
 
         ],
@@ -423,16 +526,6 @@ Widget _popupBody(String condition,String niveau,String document, String pension
 
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -454,10 +547,6 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
           _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
@@ -466,11 +555,7 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
+          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -482,7 +567,7 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
+          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
           ListTile(
             title: Text('KEBHIPS'),
             onTap: (){
@@ -519,12 +604,12 @@ Widget _createDrawerItem({
 
 Widget _createHeader(){
   return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/logo-off-kelden-v.png'))
-      ),
+    margin: EdgeInsets.zero,
+    padding: EdgeInsets.zero,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/logo-off-kelden-v.png'))
+    ),
   );
 }
 

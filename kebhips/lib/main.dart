@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:kebhips/Pages/AdmissionDashboard.dart';
 import 'package:kebhips/Pages/GalleryPage.dart';
 import 'package:flutter/cupertino.dart';
+import 'Pages/ContactUsPage.dart';
+import 'Pages/RegistrationPage.dart';
 import 'Pages/Test.dart';
 import 'Pages/TimeTablePage1.dart';
 
@@ -55,10 +57,6 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
           _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
@@ -67,11 +65,7 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
+          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -83,9 +77,9 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
+          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
           ListTile(
-            title: Text('KEBHIPS'),
+            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
             onTap: (){
 
             },
@@ -160,6 +154,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
       images: [
         new AssetImage('assets/s3.jpg'),
         new AssetImage('assets/s2.jpg'),
+        new AssetImage('assets/imgSport.jpg'),
       ],
       animationCurve: Curves.fastOutSlowIn,
       animationDuration: Duration(seconds:2),
@@ -283,7 +278,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => Inscription()));
                   },
                   child: new Card(
                     color: Colors.pinkAccent,
@@ -390,7 +385,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => NousContacter()));
                   },
                   child: new Card(
                     color: Colors.indigoAccent,

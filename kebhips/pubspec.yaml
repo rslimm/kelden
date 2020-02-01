@@ -28,6 +28,15 @@ dependencies:
   carousel_pro: ^1.0.0
   flutter_icons: ^1.0.0+1
   auto_size_text: ^2.1.0
+  flutter_launcher_icons:
+  flutter_sms: ^1.1.0
+  flutter_mailer: ^0.4.1+1
+  sms: ^0.2.4
+  flutter_email_sender: ^2.2.2
+  image_picker: ^0.6.3+1
+  mailer: ^3.0.4
+  googleapis_auth: ^0.2.11+1
+  http: ^0.12.0+4
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +80,9 @@ flutter:
      - assets/img15.jpg
      - assets/img16.jpg
      - assets/img17.jpg
+     - assets/imgSport.jpg
+     - assets/sport1.jpg
+     - assets/sport2.jpg
 
 
 

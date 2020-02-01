@@ -46,10 +46,6 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
           _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
@@ -58,11 +54,7 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
+          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -74,9 +66,9 @@ class AppDrawer extends StatelessWidget{
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
+          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
           ListTile(
-            title: Text('KEBHIPS'),
+            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
             onTap: (){
 
             },
