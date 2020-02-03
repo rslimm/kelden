@@ -4,8 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:kebhips/Pages/AdmissionDashboard.dart';
 import 'package:kebhips/Pages/GalleryPage.dart';
 import 'package:flutter/cupertino.dart';
+import 'Pages/CampusLifePage.dart';
 import 'Pages/ContactUsPage.dart';
+import 'Pages/OnlineCoursesPage.dart';
 import 'Pages/RegistrationPage.dart';
+import 'Pages/SocialMaediaPage.dart';
 import 'Pages/Test.dart';
 import 'Pages/TimeTablePage1.dart';
 
@@ -252,6 +255,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                 ),
               ),
 
+
               Container(
                 child: GestureDetector(
                   onTap: (){
@@ -272,6 +276,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   ),
                 ),
               ),
+
 
               Container(
                 child: GestureDetector(
@@ -299,7 +304,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => OnlineCoursesPage()));
                   },
                   child: new Card(
                     color: Colors.teal[900],
@@ -321,7 +326,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => CampusLifePage()));
                   },
                   child: new Card(
                     color: Colors.amber,
@@ -343,7 +348,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()));
+                        MaterialPageRoute(builder: (context) => SocialMediaPage()));
                   },
                   child: new Card(
                     color: Colors.teal,

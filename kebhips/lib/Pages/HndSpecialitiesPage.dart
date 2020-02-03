@@ -175,7 +175,7 @@ class _ListPageState extends State<ListPage> {
 List getCourses() {
   return [
     Course(
-        title: "Administration des Collectivités Térritoriales",
+        title: "Assistant Manager",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 20,
@@ -186,7 +186,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Comptabilité et Finances publiques",
+        title: "Project Management",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 50,
@@ -197,7 +197,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Fiscalité des Collectivités Térritoriales",
+        title: "Human Resource Management",
         //level: "Intermidiate",
         //indicatorValue: 0.66,
         price: 30,
@@ -208,7 +208,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Comptabilité et Gestion des Entreprises",
+        title: "Logistics and Transports",
         //level: "Intermidiate",
         //indicatorValue: 0.66,
         price: 30,
@@ -219,7 +219,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Gestion Logistique et Transport",
+        title: "Local Goverment Management",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -230,7 +230,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Gestion des ONG",
+        title: "Accountancy",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -241,7 +241,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Gestion des Ressources Humaines",
+        title: "Marketing Trade Sale",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -252,7 +252,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Gestion des Projets",
+        title: "Banking and Finance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -263,7 +263,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Assistant Manager",
+        title: "Microfinance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -274,7 +274,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Management Evènementiel",
+        title: "Insurance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -285,7 +285,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Banque et Finance",
+        title: "Didactics, Curriculum Development and Teaching",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -296,7 +296,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Assurance",
+        title: "Education Management and administration",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -307,7 +307,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Assistant Judiciare",
+        title: "Software Engineering",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -318,7 +318,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Droit Foncier et Domanial",
+        title: "Database Management",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -329,7 +329,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Gestion Fiscale",
+        title: "Hardware Maitenance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -340,7 +340,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Douane et Transit",
+        title: "Tax Management",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -351,7 +351,7 @@ List getCourses() {
             "Texte"
     ),
     Course(
-        title: "Génie Logiciel",
+        title: "Custom and Transit",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -361,139 +361,6 @@ List getCourses() {
             "Débouchés:\n"
             "Texte"
     ),
-    Course(
-        title: "Infographie et Web design",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Management Evènementiel",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "E-Commerce",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Administration Scolaire",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Didactique et Développement du Curriculum",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Orientation Scolaire et Professionnelle",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Commerce Internationnal",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Marketing Commerce Vente",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Sage-femme",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Sciences infimières",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Techniques Pharmaceutiques",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Techniques de Laboratiore et d'Analyse Médicale",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-
   ];
 }
 
@@ -543,8 +410,6 @@ class AppDrawer extends StatelessWidget{
 
             },
           )
-
-
         ],
       ),
     );
