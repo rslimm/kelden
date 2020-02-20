@@ -86,19 +86,22 @@ class CourseDetailPage extends StatelessWidget {
     final topContent = Stack(
       children: <Widget>[
         Container(
+
             padding: EdgeInsets.only(left: 10.0,),
             height: MediaQuery.of(context).size.height * 0.5,
             decoration: new BoxDecoration(
+
               image: new DecorationImage(
                 image: new AssetImage("assets/s3.jpg"),
                 fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(Colors.indigoAccent.withOpacity(0.9), BlendMode.dstATop)
               ),
             )),
         Container(
           height: MediaQuery.of(context).size.height * 0.4,
           padding: EdgeInsets.only(top:40.0, left: 20.0),
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(color: Color(0xFF736AB7)),
+
           child: Center(
             child: topContentText,
           ),
@@ -118,7 +121,9 @@ class CourseDetailPage extends StatelessWidget {
 
     final bottomContentText = Text(
       course.content,
-      style: TextStyle(fontSize: 18.0),
+      style: TextStyle(fontSize: 18.0 ,
+      ),
+      textAlign: TextAlign.justify,
     );
 
 
@@ -150,7 +155,15 @@ class CourseDetailPage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
-        children: <Widget>[topContent, bottomContent],
+        children: <Widget>[topContent,
+        Container(
+            height: MediaQuery.of(context).size.height /2.3,
+            child: ListView(
+              children: <Widget>[
+                bottomContent,
+              ],
+            ))
+        ],
       ),
     );
   }

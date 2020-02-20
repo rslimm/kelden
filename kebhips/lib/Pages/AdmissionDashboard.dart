@@ -4,13 +4,15 @@ import 'package:kebhips/popup/popup.dart';
 import 'package:kebhips/popup/popup_content.dart';
 //void main() => runApp(MyApp());
 
+//      Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM'),
+
 class AdmissionDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DashBoard(),
+
+    return Scaffold(
+      body: DashBoard(),
     );
   }
 }
@@ -30,6 +32,7 @@ class DashBoard extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.blue[900],
           title: Text(
             "ADMISSION",
@@ -64,7 +67,7 @@ class DashBoard extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -82,8 +85,11 @@ class DashBoard extends StatelessWidget {
     String niveau="";
     String document="";
 
+    String program="";
+
 
     String Specialites="";
+    String Specialites2="";
 
 
     String Inscription = "";
@@ -106,8 +112,8 @@ class DashBoard extends StatelessWidget {
         text = "BTS";
 
         condition = "";
-        niveau = " BAC/GCE ou tout autre diplôme équivalent";
-        document =  "Copie conforme certifiée de (Acte de naissance, Dernier diplôme, CNI), quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat";
+        niveau = " BACC/GCE ou tout autre diplôme équivalent";
+        document =  "Une fiche d'inscription à retirer à l'institut, les copies conforme certifiées de (Acte de naissance, Dernier diplôme, CNI), une photocopie du relévé de notes de la première année pour l'inscription en deuxième année, quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat";
         Inscription = "  20.000 CFA";
         PremiereTranche = "  100.000 CFA";
         DeuxiemeTranche = "  100.000 CFA";
@@ -127,15 +133,30 @@ class DashBoard extends StatelessWidget {
         icondata = Icons.school;
         text = "HND";
 
-        condition = "Here are the conditions for HND";
-        niveau = "BAC/GCE ou tout autre diplôme équivalent";
-        document = "CNI";
+        condition = "";
+        niveau = "BACC / GCE A level or any other equivelent certificate";
+        document = "Registration form obtainable from school, photocopies of (ID card, birth certificate, required certificate or its equivelent), copies of first year transcripts for all admissions into second year, four 4X4 passport size photos, two stamped A4 envelops with the candidate's address on one";
 
-        Inscription = "  20.000 CFA";
+
+        pension="";
+
+        Specialites="  Medical and Biomedical Sciences";
+        Specialites2="Tout autre programme / all other specialities";
+
+        InscriptionMS="  20.000 CFA";
+        PremiereTrancheMS="  100.000 CFA";
+        DeuxiemeTrancheMS="  100.000 CFA";
+        TroisiemeTrancheMS="  100.000 CFA";
+        TotalMS="   320.000 CFA";
+
+        Inscription = " 20.000 CFA";
         PremiereTranche = "  100.000 CFA";
         DeuxiemeTranche = "  100.000 CFA";
         TroisiemeTranche = "  70.000 CFA";
         Total = "  290.000 CFA";
+
+
+        program= "";
 
         break;
       case 2:
@@ -143,30 +164,55 @@ class DashBoard extends StatelessWidget {
         icondata = Icons.school;
         text = "LIPRO";
 
-        condition = "Conditions pour la Licence Pro";
+        condition = "";
         niveau = "BTS ou tout autre diplôme équivalent";
-        document = "CNI";
+        document = "Photocopie de la CNI, photocopie de l'acte de naissance, photocopie du BTS et du relévé de notes, quatre photos (4X4), deux enveloppes avec l'adresse du candidat sur une des enveloppes";
 
-        Inscription = "20.000 CFA";
-        PremiereTranche = "150.000 CFA";
-        DeuxiemeTranche = "100.000 CFA";
-        TroisiemeTranche = "50.000 CFA";
-        Total = "320.000 CFA";
+        pension="";
+        Inscription = " 50.000 CFA";
+        PremiereTranche = "  200.000 CFA";
+        DeuxiemeTranche = "  150.000 CFA";
+        TroisiemeTranche = "  100.000 CFA";
+        Total = "  500.000 CFA";
+
+        Specialites=" MEDICO-SANITAIRE";
+        Specialites2="Tout autre programme / all other specialities";
+
+
+        InscriptionMS=" 50.000 CFA";
+        PremiereTrancheMS="  250.000 CFA";
+        DeuxiemeTrancheMS="  200.000 CFA";
+        TroisiemeTrancheMS="  100.000 CFA";
+        TotalMS="   600.000 CFA";
+
+        program= " Tout autre programme / all other specialities";
+
         break;
       case 3:
         color = Colors.pinkAccent;
         icondata = Icons.school;
         text = "BACHELOR";
 
-        condition = "Here are the conditions for Bachelor";
-        niveau = "HND / BTS ou tout autre diplôme équivalent";
-        document = "CNI";
+        condition = "Requirement conditions for professional Bachelor Degree";
+        niveau = "HND / BTS or any other equivelent diploma";
+        document = "Photocopy of ID Card, photocopy of birth certificate, photocopy of HND/BTS and transcripts, four 4X4 passport size photos, two stamped A4 envelops with the candidate's address on one";
 
-        Inscription = "20.000 CFA";
-        PremiereTranche = "150.000 CFA";
-        DeuxiemeTranche = "100.000 CFA";
-        TroisiemeTranche = "50.000 CFA";
-        Total = "320.000 CFA";
+        pension="";
+        Inscription = " 50.000 CFA";
+        PremiereTranche = "  200.000 CFA";
+        DeuxiemeTranche = "  150.000 CFA";
+        TroisiemeTranche = "  100.000 CFA";
+        Total = "  500.000 CFA";
+
+        Specialites="  Medical and Biomedical Sciences";
+        Specialites2="Tout autre programme / all other specialities";
+
+
+        InscriptionMS=" 50.000 CFA";
+        PremiereTrancheMS="  250.000 CFA";
+        DeuxiemeTrancheMS="  200.000 CFA";
+        TroisiemeTrancheMS="  100.000 CFA";
+        TotalMS="   600.000 CFA";
 
         break;
       case 4:
@@ -174,17 +220,89 @@ class DashBoard extends StatelessWidget {
         icondata = Icons.school;
         text = "D. MINFOP";
 
+
+        condition = "";
+        niveau = "Dépendant du choix de la spécialité\n"
+            "Depends on the program chosen";
+        document = "Une fiche d'inscription à retirer à l'institut, les copies conforme certifiées de (Acte de naissance, diplôme requis pour la spécialité, CNI), quatre photos 4X4, deux enveloppes A4 avec les coordonées du candidat\n\n"
+            "Registration form obtainable from school, photocopies of (ID card, birth certificate, required certificate or its equivelent), four 4X4 passport size photos, two stamped A4 envelops with the candidate's address on one";
+
+
+        pension="";
+        Inscription = " 20.000 CFA";
+        PremiereTranche = "  100.000 CFA";
+        DeuxiemeTranche = "  100.000 CFA";
+        TroisiemeTranche = "  70.000 CFA";
+        Total = "  290.000 CFA";
+
+        Specialites="  Audit Fiscal, Gestion des Marchés Publics";
+        Specialites2="Tout autre programme / all other specialities";
+
+
+        InscriptionMS=" 20.000 CFA";
+        PremiereTrancheMS="  150.000 CFA";
+        DeuxiemeTrancheMS="  100.000 CFA";
+        TroisiemeTrancheMS="  50.000 CFA";
+        TotalMS="   320.000 CFA";
+
         break;
       case 5:
         color = Colors.cyanAccent;
         icondata = Icons.school;
         text = "CERTIFICATIONS";
 
+        condition = "";
+        niveau = "Tout niveau dépendant de vos compétences et des prérequis nécéssaires à la certification\n\n"
+            "Any level depending on your aptitudes and on the requirements of certifications\n\n";
+        document = "Tel que prévu par la certification, pour des informations supplémentaires, veuillez nous laissez un message via le menu Laisser un message*, et nous vous contacterons.\n\n"
+            "As required for by certifications, for more information please leave us a message through our message* menu";
+
+
+        pension="";
+        Inscription = " xx.xxx CFA";
+        PremiereTranche = "  xxx.xxx CFA";
+        DeuxiemeTranche = "  xxx.xxx CFA";
+        TroisiemeTranche = "  xxx.xxx CFA";
+        Total = "  xxx.xxx CFA";
+
+        Specialites="";
+        Specialites2="";
+
+
+        InscriptionMS=" xxx.xxx CFA";
+        PremiereTrancheMS="  xxx.xxx CFA";
+        DeuxiemeTrancheMS="  xxx.xxx CFA";
+        TroisiemeTrancheMS="  xxx.xxx CFA";
+        TotalMS="   xxx.xxx CFA";
         break;
       case 6:
         color = Colors.teal;
         icondata = Icons.school;
         text = "A LA CARTE";
+
+        condition = "";
+        niveau = "Tout niveau dépendant de vos compétences et des prérequis nécéssaires à la formation\n\n"
+            "Any level depending on your aptitudes and on the requirements of the training\n\n";
+        document = "Tel que prévu par la formation, pour des informations supplémentaires, veuillez nous laissez un message via le menu Laisser un message*, et nous vous contacterons.\n\n"
+            "As required for by training, for more information please leave us a message through our message* menu";
+
+
+        pension="";
+        Inscription = " xx.xxx CFA";
+        PremiereTranche = "  xxx.xxx CFA";
+        DeuxiemeTranche = "  xxx.xxx CFA";
+        TroisiemeTranche = "  xxx.xxx CFA";
+        Total = "  xxx.xxx CFA";
+
+        Specialites="";
+        Specialites2="";
+
+
+        InscriptionMS=" xxx.xxx CFA";
+        PremiereTrancheMS="  xxx.xxx CFA";
+        DeuxiemeTrancheMS="  xxx.xxx CFA";
+        TroisiemeTrancheMS="  xxx.xxx CFA";
+        TotalMS="   xxx.xxx CFA";
     }
 
     return Builder(builder: (context) {
@@ -201,7 +319,7 @@ class DashBoard extends StatelessWidget {
           child: InkWell(
             onTap: () {
               //gestion du pupop text
-              showPopup(context, _popupBody(condition, niveau, document, pension, Specialites, Inscription, PremiereTranche, DeuxiemeTranche, TroisiemeTranche, Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS), '$text');
+              showPopup(context, _popupBody(condition, niveau, document, pension, Specialites, Specialites2, Inscription, PremiereTranche, DeuxiemeTranche, TroisiemeTranche, Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS), '$text');
             },
             child: Center(
               child: Column(
@@ -228,8 +346,8 @@ class DashBoard extends StatelessWidget {
           ),
         ),
       );
-      ;
-    });
+    }
+    );
   }
 }
 
@@ -296,6 +414,7 @@ showPopup(BuildContext context, Widget widget, String title,
             }),
             brightness: Brightness.light,
           ),
+
           resizeToAvoidBottomPadding: false,
 
           body: widget,
@@ -306,7 +425,7 @@ showPopup(BuildContext context, Widget widget, String title,
 }
 
 
-Widget _popupBody(String condition,String niveau,String document, String pension, String Specialites, String Inscription, String PremiereTranche, String DeuxiemeTranche, String TroisiemeTranche, String Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS) {
+Widget _popupBody(String condition,String niveau,String document, String pension, String Specialites, String Specialites2, String Inscription, String PremiereTranche, String DeuxiemeTranche, String TroisiemeTranche, String Total, InscriptionMS, PremiereTrancheMS, DeuxiemeTrancheMS, TroisiemeTrancheMS, TotalMS) {
   return ListView(
     padding: EdgeInsets.all(12),
 
@@ -314,7 +433,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
     children: <Widget>[
       Column(
         children: <Widget>[
-          AutoSizeText("Conditions d'admission:",style: TextStyle(
+          AutoSizeText("Conditions d'admission / Admission conditions:",style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
           ),),
@@ -330,7 +449,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
       SizedBox(height: 15.0,),
       Column(
         children: <Widget>[
-          AutoSizeText("Niveau requis :",style: TextStyle(
+          AutoSizeText("Niveau requis / Required level:",style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
           ),),
@@ -344,7 +463,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
       SizedBox(height: 15.0,),
       Column(
         children: <Widget>[
-          AutoSizeText("Documents requis:",style: TextStyle(
+          AutoSizeText("Dossiers d'inscription / Registration formalities:",style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
           ),),
@@ -358,7 +477,7 @@ Widget _popupBody(String condition,String niveau,String document, String pension
       SizedBox(height: 25.0,),
       Row(
         children: <Widget>[
-          AutoSizeText("Pension:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Pension / Fees:", textAlign: TextAlign.end,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
@@ -369,80 +488,10 @@ Widget _popupBody(String condition,String niveau,String document, String pension
 
         ],
       ),
-      SizedBox(height: 15.0,),
-      Row(
-        children: <Widget>[
-          AutoSizeText("Inscription:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
-
-          AutoSizeText("$Inscription",style: TextStyle(
-
-          ),),
-
-        ],
-      ),
-      SizedBox(height: 15.0,),
-      Row(
-        children: <Widget>[
-          AutoSizeText("Première Tranche:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
-
-          AutoSizeText("$PremiereTranche",style: TextStyle(
-
-          ),),
-
-        ],
-      ),
-      SizedBox(height: 15.0,),
-      Row(
-        children: <Widget>[
-          AutoSizeText("Deuxième Tranche:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
-
-          AutoSizeText("$DeuxiemeTranche",style: TextStyle(
-
-          ),),
-
-        ],
-      ),
-      SizedBox(height: 15.0,),
-      Row(
-        children: <Widget>[
-          AutoSizeText("Troisième Tranche:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
-
-          AutoSizeText("$TroisiemeTranche",style: TextStyle(
-
-          ),),
-
-        ],
-      ),
       SizedBox(height: 25.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("          Total:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
-
-          AutoSizeText("$Total",style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),),
-
-        ],
-      ),
-      SizedBox(height: 35.0,),
-      Row(
-        children: <Widget>[
-          AutoSizeText("Spécialités:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Spécialités / Specialities:", textAlign: TextAlign.center,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
@@ -453,9 +502,9 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("Inscription:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Inscription / Registration:", textAlign: TextAlign.center,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
@@ -467,9 +516,9 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("Première tranche:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Première tranche / 1st Installement:", textAlign: TextAlign.center,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
@@ -481,9 +530,9 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("Deuxième Tranche:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Deuxième Tranche / 2nd Installement:", textAlign: TextAlign.center,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
@@ -495,12 +544,14 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 15.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("Troisième Tranche:", textAlign: TextAlign.end,style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0,
-          ),),
+          Container(
+            child: AutoSizeText("Troisième Tranche rr/ 3rd Installement:", textAlign: TextAlign.center,style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),),
+          ),
 
           AutoSizeText("$TroisiemeTrancheMS",style: TextStyle(
 
@@ -509,20 +560,116 @@ Widget _popupBody(String condition,String niveau,String document, String pension
         ],
       ),
       SizedBox(height: 25.0,),
-      Row(
+      Column(
         children: <Widget>[
-          AutoSizeText("          Total:", textAlign: TextAlign.end,style: TextStyle(
+          AutoSizeText("Total:", textAlign: TextAlign.center,style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20.0,
           ),),
 
           AutoSizeText("$TotalMS",style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: 30.0,
           ),),
 
         ],
       ),
+
+
+      SizedBox(height: 25.0,),
+      Column(
+        children: <Widget>[
+          AutoSizeText(" Spécialités / Specialities:", textAlign: TextAlign.center,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Specialites2",style: TextStyle(
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 35.0,),
+
+      Column(
+        children: <Widget>[
+          AutoSizeText("Inscription / Registration:", textAlign: TextAlign.center,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Inscription",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Column(
+        children: <Widget>[
+          Container(
+            child: AutoSizeText("Première tranche / 1st Installement:", textAlign: TextAlign.center,style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),),
+          ),
+
+          AutoSizeText("$PremiereTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Column(
+        children: <Widget>[
+          Container(
+            child: AutoSizeText("Deuxième Tranche / 2nd Installement:", textAlign: TextAlign.center,style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),),
+          ),
+
+          AutoSizeText("$DeuxiemeTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+      SizedBox(height: 15.0,),
+      Column(
+        children: <Widget>[
+          Container(
+            child: AutoSizeText("Troisième Tranche / 3rd Installement:", textAlign: TextAlign.center,style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0,
+            ),),
+          ),
+
+          AutoSizeText("$TroisiemeTranche",style: TextStyle(
+
+          ),),
+
+        ],
+      ),
+
+      SizedBox(height: 25.0,),
+      Column(
+        children: <Widget>[
+          AutoSizeText("Total:", textAlign: TextAlign.center,style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20.0,
+          ),),
+
+          AutoSizeText("$Total",style: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 30.0,
+          ),),
+
+        ],
+      ),
+
     ],
+
 
   );
 }

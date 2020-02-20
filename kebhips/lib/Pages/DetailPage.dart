@@ -84,7 +84,8 @@ class DetailPage extends StatelessWidget {
               ],
             ),
           ),
-          programmesDetails.buttonTheme,
+          //
+          programmesDetails.gestureDetector,
         ],
       ),
     );

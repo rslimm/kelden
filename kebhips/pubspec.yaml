@@ -26,6 +26,7 @@ dependencies:
   splashscreen: ^1.2.0
   flip_card: ^0.4.4
   carousel_pro: ^1.0.0
+  marquee_widget: ^0.8.0
   flutter_icons: ^1.0.0+1
   auto_size_text: ^2.1.0
   flutter_launcher_icons:
@@ -38,6 +39,9 @@ dependencies:
   googleapis_auth: ^0.2.11+1
   http: ^0.12.0+4
   url_launcher: ^3.0.3
+  shared_preferences: ^0.5.6+1
+  fluttertoast: ^3.1.3
+
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +91,9 @@ flutter:
      - assets/facebook-icon.png
      - assets/twitter-logo.jpg
      - assets/linkedin.png
+     - assets/facebook-icon.jpg
+     - assets/twitter-logo.jpg
+     - assets/linkedin.jpg
 
 
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../main.dart';
 import 'CardRow.dart';
 import 'TimeTablePage2.dart';
 
@@ -14,67 +15,16 @@ class _TimeTablePageState extends State<TimeTablePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.blue[900],
-        title: Text('Programmes'),
+        title: Text('Programmes', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40.0),),
       ),
       drawer: AppDrawer(),
       body: new Column(
         children: <Widget>[
           //new GradientAppBar("K E B H I P S"),
           new TimeTablePage2(),
-        ],
-      ),
-    );
-  }
-}
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
-          ListTile(
-            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
-            onTap: (){
-
-            },
-          )
-
-
+          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM')
         ],
       ),
     );

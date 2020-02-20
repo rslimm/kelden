@@ -27,7 +27,8 @@ class _OnlineCoursesPageState extends State<OnlineCoursesPage> {
                             'à la disposition de ces derniers des cours aux quelles ils prendront part à distance, à partir de leur bureau'
                             'leur maison etc...'
             , textAlign: TextAlign.justify,),
-          )
+          ),
+          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.center,)
         ],
       ),
     );

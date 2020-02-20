@@ -2,13 +2,41 @@ import 'package:kebhips/Model/Course.dart';
 import 'package:flutter/material.dart';
 
 
-class BachelorCourseDetailPage extends StatelessWidget {
+class BachelorCourseDetailPage extends StatefulWidget{
+
   final Course course;
   BachelorCourseDetailPage({Key key, this.course}) : super(key: key);
+
+
+  @override
+  _BachelorCourseDetailPageState createState() => _BachelorCourseDetailPageState();
+}
+
+class _BachelorCourseDetailPageState extends State<BachelorCourseDetailPage> {
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
+      double longueur = MediaQuery.of(context).size.height;
+    double largeur = MediaQuery.of(context).size.width;
 
-    /*
+  
+   /*
 
     final levelIndicator = Container(
       child: Container(
@@ -28,7 +56,7 @@ class BachelorCourseDetailPage extends StatelessWidget {
           border: new Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(5.0)),
       child: new Text(
-        "\$" + course.price.toString(),
+        "\$" + widget.course.price.toString(),
         style: TextStyle(color: Colors.white),
       ),
     );
@@ -48,7 +76,7 @@ class BachelorCourseDetailPage extends StatelessWidget {
         ),
         SizedBox(height: 5.0),
         Text(
-          course.title,
+          widget.course.title,
           style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 20.0),
@@ -117,7 +145,7 @@ class BachelorCourseDetailPage extends StatelessWidget {
     );
 
     final bottomContentText = Text(
-      course.content,
+      widget.course.content,
       style: TextStyle(fontSize: 18.0),
     );
 
@@ -148,10 +176,14 @@ class BachelorCourseDetailPage extends StatelessWidget {
       ),
     );
 
-    return Scaffold(
+   return Scaffold(
       body: Column(
         children: <Widget>[topContent, bottomContent],
       ),
     );
   }
+
+ 
 }
+
+ 

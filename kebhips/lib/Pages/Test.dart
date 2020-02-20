@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -71,7 +71,4 @@ class _HomeState extends State<Home> {
       body: myGridView,
     );
   }
-}
-void main() {
-  runApp(new MyApp());
 }

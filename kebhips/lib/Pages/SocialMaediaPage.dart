@@ -28,7 +28,7 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
                       onTap: () async{
                         await launch('https://web.facebook.com/kebhips');
                       },
-                      child: Image.asset('assets/facebook-icon.png')
+                      child: Image.asset('assets/facebook-icon.jpg')
                   ),
 
                 ),
@@ -50,7 +50,18 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
                       onTap: () async{
                         await launch('https://www.linkedin.com/in/institute-kelden-0a6274197/');
                       },
-                      child: Image.asset('assets/linkedin.png')
+                      child: Image.asset('assets/linkedin.jpg')
+                  ),
+
+                ),
+                SizedBox(
+                  width: 120.0,
+                  height: 180.0,
+                  child: GestureDetector(
+                      onTap: () async{
+                        await launch('https://www.keldeninstitute.com');
+                      },
+                      child: Image.asset('assets/logo-off-kelden-v.png')
                   ),
 
                 ),
@@ -63,3 +74,7 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
     );
   }
 }
+
+
+
+
