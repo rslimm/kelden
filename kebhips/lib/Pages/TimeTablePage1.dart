@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 import 'CardRow.dart';
 import 'TimeTablePage2.dart';
@@ -24,9 +25,27 @@ class _TimeTablePageState extends State<TimeTablePage> {
         children: <Widget>[
           //new GradientAppBar("K E B H I P S"),
           new TimeTablePage2(),
-          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM')
+       Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+                onTap: () async{
+                              await launch('https://minse.io');
+                            },
+                 
+                 child: Text(' MINSE')),
+            ],
+          ),
+        ),
+      ),
         ],
       ),
+
+   
     );
   }
 }

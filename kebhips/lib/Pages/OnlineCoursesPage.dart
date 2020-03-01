@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class OnlineCoursesPage extends StatefulWidget {
@@ -14,21 +15,51 @@ class _OnlineCoursesPageState extends State<OnlineCoursesPage> {
         title: new Text('K E B H I P S', textAlign: TextAlign.center,),
         backgroundColor: Colors.blue[900],
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           Container(
-            child: new Text('Cours en ligne', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+            height: MediaQuery.of(context).size.height*0.88,
+            child: ListView(
+              children: <Widget>[
+                Container(
+                  child: new Text('Cours en ligne', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(15.0),
+                  child: new Text('Notre programme de cours en ligne concerne les étudiants et travailleurs désireux de poursuivre leurs études'
+                                  'mais ne disposant pas du temps nécéssaire pour prendre part au cours en présentielle, nous metons de ce fait'
+                                  'à la disposition de ces derniers des cours aux quelles ils prendront part à distance, à partir de leur bureau'
+                                  'leur maison etc...'
+                  , textAlign: TextAlign.justify,),
+                ),
+             
+              ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(15.0),
-            child: new Text('Notre programme de cours en ligne concerne les étudiants et travailleurs désireux de poursuivre leurs études'
-                            'mais ne disposant pas du temps nécéssaire pour prendre part au cours en présentielle, nous metons de ce fait'
-                            'à la disposition de ces derniers des cours aux quelles ils prendront part à distance, à partir de leur bureau'
-                            'leur maison etc...'
-            , textAlign: TextAlign.justify,),
+
+
+Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          //MediaQuery.of(context).size.width*0.4
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+                onTap: () async{
+                              await launch('https://minse.io');
+                            },
+                 
+                 child: Text(' MINSE')),
+            ],
           ),
-          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.center,)
+        ),
+      )
+
+
+          
         ],
       ),
     );

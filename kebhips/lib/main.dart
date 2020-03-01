@@ -720,7 +720,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
 
     ),
 
-  Marquee(
+ /* Marquee(
       child: Text('This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects. This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects.', style: TextStyle(fontSize: 20.0),
       ),
     textDirection: TextDirection.ltr,
@@ -728,14 +728,51 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
     directionMarguee: DirectionMarguee.oneDirection,
 
 
-  ),
+  ),*/
   avecInscription(),
+
+
+Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+                 onTap: (){
+
+                   //fonction pour aller sur mise .io
+
+                 },
+                 
+                 child: Text(' MINSE')),
+            ],
+          ),
+        ),
+      )
+
 
      ],
 
       ),
 
-      bottomSheet: Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.end,),
+    /*  bottomSheet: Center(
+        child: Row(
+          children: <Widget>[
+            Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+             GestureDetector(
+               
+               onTap: (){
+
+                 //fonction pour aller sur mi,s
+
+               },
+               
+               child: Text(' MINSE.io')),
+          ],
+        ),
+      ),*/
 
     );
 

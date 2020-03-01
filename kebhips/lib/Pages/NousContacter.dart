@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NousContacter extends StatefulWidget{
 
@@ -176,84 +177,88 @@ theme: ThemeData(primaryColor: Colors.blue),
           actions: <Widget>[
           ],
         ),
-               body: SingleChildScrollView(
+               body: Column(
+                 children: <Widget>[
+                   Container(
+                   height: MediaQuery.of(context).size.height*0.88,
+                     child: SingleChildScrollView(
             child: Center(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-               
-                           SizedBox(
+                      mainAxisSize: MainAxisSize.max,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                     
+                                 SizedBox(
               height: longueur / 35,
               ),
-                          Row
+                                Row
               (
               children: <Widget>[
-                SizedBox(
-                  width: largeur / 25,
-                ),
-                new Container(
-                  width: 23 * largeur / 25,
-                  
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  
-                  child: Theme(
-                    data: ThemeData(
-                      hintColor: nomColors
-                    ),
-                                      child: TextField(
-                      keyboardType: TextInputType.text,
-                    
-                      controller: nomcontroler,
-                      onChanged: (text) {
-                         
-                      },
-                      decoration: new InputDecoration(
-                       filled: true,
-                       
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(4),),
-                        //ici je gere la bordure  colors
-                        borderSide: BorderSide(width: 2,color: nomColors)
+                      SizedBox(
+                        width: largeur / 25,
                       ),
-                        labelText:(nomColors==Colors.blue)? "Nom *  : ":"Bien vouloir entrer votre nom", border: OutlineInputBorder(
+                      new Container(
+                        width: 23 * largeur / 25,
+                        
+                        padding: const EdgeInsets.only(bottom: 16.0),
+                        
+                        child: Theme(
+                          data: ThemeData(
+                            hintColor: nomColors
+                          ),
+                                            child: TextField(
+                            keyboardType: TextInputType.text,
                           
-                          
+                            controller: nomcontroler,
+                            onChanged: (text) {
+                               
+                            },
+                            decoration: new InputDecoration(
+                             filled: true,
+                             
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(4),),
+                              //ici je gere la bordure  colors
+                              borderSide: BorderSide(width: 2,color: nomColors)
+                            ),
+                              labelText:(nomColors==Colors.blue)? "Nom *  : ":"Bien vouloir entrer votre nom", border: OutlineInputBorder(
+                                
+                                
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: largeur / 25,
-                ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
               ],
               ),
 
               Row
               (
               children: <Widget>[
-                SizedBox(
-                  width: largeur / 25,
-                ),
-                new Container(
-                  width: 23 * largeur / 25,
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    controller: prenomcontroler,
-                    onChanged: (text) {
-                       
-                    },
-                    decoration: new InputDecoration(
-                      labelText: "Prenom   : ", border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: largeur / 25,
-                ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
+                      new Container(
+                        width: 23 * largeur / 25,
+                        padding: const EdgeInsets.only(bottom: 16.0),
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          controller: prenomcontroler,
+                          onChanged: (text) {
+                             
+                          },
+                          decoration: new InputDecoration(
+                            labelText: "Prenom   : ", border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
               ],
               ),
 
@@ -262,41 +267,41 @@ theme: ThemeData(primaryColor: Colors.blue),
               Row
               (
               children: <Widget>[
-                SizedBox(
-                  width: largeur / 25,
-                ),
-                new Container(
-                  width: 23 * largeur / 25,
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: Theme(
-                                        data: ThemeData(
-                      hintColor: telephoneColors
-                    ),
-                                      child: TextField(
-                      keyboardType: TextInputType.phone,
-                      controller: telephonecontroler,
-                      onChanged: (text) {
-                         
-                      },
-                      decoration: new InputDecoration(
-                         filled: true,
-                         
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4),),
-                          //ici je gere la bordure  colors
-                          borderSide: BorderSide(width: 2,color: telephoneColors)
-                        ),
-                          labelText:(telephoneColors==Colors.blue)? "Telephone *  : ":"Bien vouloir entrer votre numero", border: OutlineInputBorder(
-                            
-                            
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
+                      new Container(
+                        width: 23 * largeur / 25,
+                        padding: const EdgeInsets.only(bottom: 16.0),
+                        child: Theme(
+                                              data: ThemeData(
+                            hintColor: telephoneColors
+                          ),
+                                            child: TextField(
+                            keyboardType: TextInputType.phone,
+                            controller: telephonecontroler,
+                            onChanged: (text) {
+                               
+                            },
+                            decoration: new InputDecoration(
+                               filled: true,
+                               
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(4),),
+                                //ici je gere la bordure  colors
+                                borderSide: BorderSide(width: 2,color: telephoneColors)
+                              ),
+                                labelText:(telephoneColors==Colors.blue)? "Telephone *  : ":"Bien vouloir entrer votre numero", border: OutlineInputBorder(
+                                  
+                                  
+                                ),
+                              ),
                           ),
                         ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: largeur / 25,
-                ),
+                      ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
               ],
               ),
 
@@ -305,71 +310,103 @@ theme: ThemeData(primaryColor: Colors.blue),
               Row
               (
               children: <Widget>[
-                SizedBox(
-                  width: largeur / 25,
-                ),
-                new Container(
-                  
-                  width: 23 * largeur / 25,
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller: mailcontroler,
-                    onChanged: (text) {
-                       
-                    },
-                    decoration: new InputDecoration(
-                      labelText: "Mail : ", border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: largeur / 25,
-                ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
+                      new Container(
+                        
+                        width: 23 * largeur / 25,
+                        padding: const EdgeInsets.only(bottom: 16.0),
+                        child: TextField(
+                          keyboardType: TextInputType.emailAddress,
+                          controller: mailcontroler,
+                          onChanged: (text) {
+                             
+                          },
+                          decoration: new InputDecoration(
+                            labelText: "Mail : ", border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: largeur / 25,
+                      ),
               ],
               ),
 
              
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: TextField(
-                      controller: _subjectController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Subject',
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Theme(
-                                          data: ThemeData(
-                      hintColor: bodyColors
-                    ),
-                                          child: TextField(
-                        controller: _bodyController,
-                        maxLines: 10,
-                        decoration: new InputDecoration(
-                         filled: true,
-                         
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4),),
-                          //ici je gere la bordure  colors
-                          borderSide: BorderSide(width: 2,color: nomColors)
-                        ),
-                          labelText:(bodyColors==Colors.blue)? "Body *  : ":"Bien vouloir entrer votre message", border: OutlineInputBorder(
-                            
-                            
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: TextField(
+                            controller: _subjectController,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Subject',
+                            ),
                           ),
-                        )
-                      ),
-                    ),
-                  ),
-                           new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM')
-                ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Theme(
+                                                data: ThemeData(
+                            hintColor: bodyColors
+                          ),
+                                                child: TextField(
+                              controller: _bodyController,
+                              maxLines: 10,
+                              decoration: new InputDecoration(
+                               filled: true,
+                               
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(4),),
+                                //ici je gere la bordure  colors
+                                borderSide: BorderSide(width: 2,color: nomColors)
+                              ),
+                                labelText:(bodyColors==Colors.blue)? "Body *  : ":"Bien vouloir entrer votre message", border: OutlineInputBorder(
+                                  
+                                  
+                                ),
+                              )
+                            ),
+                          ),
+                        ),
+                                
+                      ],
               ),
             ),
           ),
+                   ),
+
+
+
+
+
+Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          //MediaQuery.of(context).size.height*0.88
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+                 onTap: () async{
+                              await launch('https://minse.io');
+                            },
+                 
+                 child: Text(' MINSE')),
+            ],
+          ),
+        ),)
+
+
+
+
+
+
+
+                 ],
+               ),
        
        floatingActionButton: FloatingActionButton.extended(
             icon: Icon(Icons.send),

@@ -68,6 +68,31 @@ class DashBoard extends StatelessWidget {
                 ),
               ),
             ),
+
+
+
+
+Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+                 onTap: (){
+
+                   //fonction pour aller sur mise .io
+
+                 },
+                 
+                 child: Text(' MINSE')),
+            ],
+          ),
+        ),
+      )
+
+
           ],
         ),
       ),

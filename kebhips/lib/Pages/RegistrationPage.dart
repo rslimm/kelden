@@ -8,6 +8,7 @@ import 'package:kebhips/Model/Course.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RegistrationPage extends StatefulWidget{
 
@@ -1965,351 +1966,355 @@ String messageAdd="";
           
           ],
         ),
-      body:  ListView
-      (
+      body:  Column(
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                height: longueur / 20,
-              ),
-           
-              SizedBox(
-                height: longueur / 35,
-              ),
-                            Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Theme(
-                       data: ThemeData(
-                      hintColor: nomColors
+          Container(
+            height: MediaQuery.of(context).size.height*0.88,
+            child: ListView
+            (
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: longueur / 20,
                     ),
-                                          child: TextField(
-                        keyboardType: TextInputType.text,
-                        controller: nomcontroler,
-                        onChanged: (text) {
-                           
-                        },
-                        decoration: new InputDecoration(
-                       filled: true,
-                       
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(4),),
-                        //ici je gere la bordure  colors
-                        borderSide: BorderSide(width: 2,color: nomColors)
-                      ),
-                        labelText:(nomColors==Colors.blue)? "Nom *  : ":"Bien vouloir entrer votre nom", border: OutlineInputBorder(
-                          
-                          
+                 
+                    SizedBox(
+                      height: longueur / 35,
+                    ),
+                                  Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
                         ),
-                      ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-
-                Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: TextField(
-                      keyboardType: TextInputType.text,
-                      controller: prenomcontroler,
-                      onChanged: (text) {
-                         
-                      },
-                      decoration: new InputDecoration(
-                        labelText: "Prenom   : ", border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-
-
-              
-                Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Theme(
-                       data: ThemeData(
-                      hintColor: telephoneColors
-                    ),
-                                          child: TextField(
-                        keyboardType: TextInputType.phone,
-                        controller: telephonecontroler,
-                        onChanged: (text) {
-                           
-                        },
-                        decoration: new InputDecoration(
-                         filled: true,
-                         
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4),),
-                          //ici je gere la bordure  colors
-                          borderSide: BorderSide(width: 2,color: telephoneColors)
-                        ),
-                          labelText:(telephoneColors==Colors.blue)? "Telephone *  : ":"Bien vouloir entrer votre numero", border: OutlineInputBorder(
-                            
-                            
+                        new Container(
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: Theme(
+                             data: ThemeData(
+                            hintColor: nomColors
+                          ),
+                                                child: TextField(
+                              keyboardType: TextInputType.text,
+                              controller: nomcontroler,
+                              onChanged: (text) {
+                                 
+                              },
+                              decoration: new InputDecoration(
+                             filled: true,
+                             
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(4),),
+                              //ici je gere la bordure  colors
+                              borderSide: BorderSide(width: 2,color: nomColors)
+                            ),
+                              labelText:(nomColors==Colors.blue)? "Nom *  : ":"Bien vouloir entrer votre nom", border: OutlineInputBorder(
+                                
+                                
+                              ),
+                            ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-
-
-
-                Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: mailcontroler,
-                      onChanged: (text) {
-                         
-                      },
-                      decoration: new InputDecoration(
-                        labelText: "Mail : ", border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-
-             
-             
-                             Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Theme(
-                       data: ThemeData(
-                      hintColor: villeColors
-                    ),
-                                          child: TextField(
-                        keyboardType: TextInputType.text,
-                        controller: villecontroler,
-                        onChanged: (text) {
-                           
-                        },
-                         decoration:  new InputDecoration(
-                         filled: true,
-                         
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(4),),
-                          //ici je gere la bordure  colors
-                          borderSide: BorderSide(width: 2,color: villeColors)
+                        SizedBox(
+                          width: largeur / 25,
                         ),
-                          labelText:(villeColors==Colors.blue)? "Ville *  : ":"Bien vouloir entrer votre ville", border: OutlineInputBorder(
-                            
-                            
+                      ],
+                    ),
+
+                      Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                        new Container(
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: TextField(
+                            keyboardType: TextInputType.text,
+                            controller: prenomcontroler,
+                            onChanged: (text) {
+                               
+                            },
+                            decoration: new InputDecoration(
+                              labelText: "Prenom   : ", border: OutlineInputBorder(),
+                            ),
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
+
+
+                    
+                      Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                        new Container(
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: Theme(
+                             data: ThemeData(
+                            hintColor: telephoneColors
+                          ),
+                                                child: TextField(
+                              keyboardType: TextInputType.phone,
+                              controller: telephonecontroler,
+                              onChanged: (text) {
+                                 
+                              },
+                              decoration: new InputDecoration(
+                               filled: true,
+                               
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(4),),
+                                //ici je gere la bordure  colors
+                                borderSide: BorderSide(width: 2,color: telephoneColors)
+                              ),
+                                labelText:(telephoneColors==Colors.blue)? "Telephone *  : ":"Bien vouloir entrer votre numero", border: OutlineInputBorder(
+                                  
+                                  
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                      ],
+                    ),
+
+
+
+                      Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                        new Container(
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: TextField(
+                            keyboardType: TextInputType.emailAddress,
+                            controller: mailcontroler,
+                            onChanged: (text) {
+                               
+                            },
+                            decoration: new InputDecoration(
+                              labelText: "Mail : ", border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                      ],
+                    ),
+
+                   
+                   
+                                   Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                        new Container(
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: Theme(
+                             data: ThemeData(
+                            hintColor: villeColors
+                          ),
+                                                child: TextField(
+                              keyboardType: TextInputType.text,
+                              controller: villecontroler,
+                              onChanged: (text) {
+                                 
+                              },
+                               decoration:  new InputDecoration(
+                               filled: true,
+                               
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(4),),
+                                //ici je gere la bordure  colors
+                                borderSide: BorderSide(width: 2,color: villeColors)
+                              ),
+                                labelText:(villeColors==Colors.blue)? "Ville *  : ":"Bien vouloir entrer votre ville", border: OutlineInputBorder(
+                                  
+                                  
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                      ],
+                    ),
 
  SizedBox(
-                height: longueur / 35,
-              ),
+                      height: longueur / 35,
+                    ),
 
    
 
-                    Row
-              (
-                children: <Widget>[
+                          Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                           Theme(
+                             data: ThemeData(
+                                 hintColor: programmeColors
+                             ),
+                             child: new Container
+                  (
+                               decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.all(Radius.circular(2)),
+                                 border: Border.all(color: programmeColors)
+                               ),
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                    child:        DropdownButton<String>
+                              (
+
+                                                      isExpanded: true,
+                                                      elevation: 12,
+                                                      items: programe.map((String value) {
+                                                        return new DropdownMenuItem<String>(
+                                                          value: value,
+                                                          child: new Text(value),
+                                                        );
+                                                      }).toList(),
+                                                      hint: Container(
+                                                        width: largeur*0.8,
+                                                        child: Text("Programme* : $programechoisi",style:TextStyle( fontWeight: FontWeight.bold, color:(programmeColors==Colors.blue)? Colors.black:Colors.red
+                                                            ,fontSize: 20) ,)
+                                                      ),
+                                                      onChanged: (value) {
+                                                        setState(() {
+                                                          programechoisi=value;
+                                                          choix=programe.indexOf(value)+1;
+                                                          specialitechoisi="";
+                                                        });
+
+
+
+                                                      },
+                                                    ),
+
+
+                  ),
+                           ),
+                 
+
+
+                
+
+
+
+
+
+
                   SizedBox(
-                    width: largeur / 25,
+                          width: largeur / 25,
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(
+                      height: longueur / 35,
+                    ),
+
+
+
+             Row
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                           Theme(
+                             data: ThemeData(
+                                 hintColor: specialitesColors
+                             ),
+                             child: new Container
+                  (
+                               decoration: BoxDecoration(
+                                   borderRadius: BorderRadius.all(Radius.circular(2)),
+                                   border: Border.all(color: specialitesColors)
+                               ),
+                          width: 23 * largeur / 25,
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                    child:        DropdownButton<String>
+                              (
+
+                                                      isExpanded: true,
+                                                      elevation: 12,
+                                                      items: specialiteGeneral[choix].map((String value) {
+                                                        return new DropdownMenuItem<String>(
+                                                          value: value,
+                                                          child: new Text(value),
+                                                        );
+                                                      }).toList(),
+                                                      hint: Container(
+                                                        width: largeur*0.8,
+                                                        child: Text("Speciatite : $specialitechoisi",style:TextStyle( fontWeight: FontWeight.bold, color: (specialitesColors==Colors.blue)? Colors.black:Colors.red,fontSize: 20) ,)
+                                                      ),
+                                                      onChanged: (value) {
+
+                                                       setState(() {
+                                                          specialitechoisi=value;
+                                                       });
+
+
+
+                                                      },
+                                                    ),
+
+
                   ),
-                     Theme(
-                       data: ThemeData(
-                           hintColor: programmeColors
-                       ),
-                       child: new Container
-            (
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.all(Radius.circular(2)),
-                           border: Border.all(color: programmeColors)
-                         ),
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-              child:        DropdownButton<String>
-                        (
-
-                                                isExpanded: true,
-                                                elevation: 12,
-                                                items: programe.map((String value) {
-                                                  return new DropdownMenuItem<String>(
-                                                    value: value,
-                                                    child: new Text(value),
-                                                  );
-                                                }).toList(),
-                                                hint: Container(
-                                                  width: largeur*0.8,
-                                                  child: Text("Programme* : $programechoisi",style:TextStyle( fontWeight: FontWeight.bold, color:(programmeColors==Colors.blue)? Colors.black:Colors.red
-                                                      ,fontSize: 20) ,)
-                                                ),
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    programechoisi=value;
-                                                    choix=programe.indexOf(value)+1;
-                                                    specialitechoisi="";
-                                                  });
+                           ),
+                 
 
 
-
-                                                },
-                                              ),
-
-
-            ),
-                     ),
-           
-
-
-          
+                
 
 
 
 
 
 
-            SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-
-              SizedBox(
-                height: longueur / 35,
-              ),
-
-
-
-       Row
-              (
-                children: <Widget>[
                   SizedBox(
-                    width: largeur / 25,
-                  ),
-                     Theme(
-                       data: ThemeData(
-                           hintColor: specialitesColors
-                       ),
-                       child: new Container
-            (
-                         decoration: BoxDecoration(
-                             borderRadius: BorderRadius.all(Radius.circular(2)),
-                             border: Border.all(color: specialitesColors)
-                         ),
-                    width: 23 * largeur / 25,
-                    padding: const EdgeInsets.only(bottom: 16.0),
-              child:        DropdownButton<String>
-                        (
-
-                                                isExpanded: true,
-                                                elevation: 12,
-                                                items: specialiteGeneral[choix].map((String value) {
-                                                  return new DropdownMenuItem<String>(
-                                                    value: value,
-                                                    child: new Text(value),
-                                                  );
-                                                }).toList(),
-                                                hint: Container(
-                                                  width: largeur*0.8,
-                                                  child: Text("Speciatite : $specialitechoisi",style:TextStyle( fontWeight: FontWeight.bold, color: (specialitesColors==Colors.blue)? Colors.black:Colors.red,fontSize: 20) ,)
-                                                ),
-                                                onChanged: (value) {
-
-                                                 setState(() {
-                                                    specialitechoisi=value;
-                                                 });
-
-
-
-                                                },
-                                              ),
-
-
-            ),
-                     ),
-           
-
-
-          
+                          width: largeur / 25,
+                        ),
+                      ],
+                    ),
+                   
 
 
 
 
+               
 
 
-            SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
-             
-
-
-
-
-         
-
-
-              
-              
-              
-              
+                    
+                    
+                    
+                    
 
  
 
@@ -2326,10 +2331,10 @@ String messageAdd="";
 
 
  
-             
-              SizedBox(
-                height: longueur / 35,
-              ),
+                   
+                    SizedBox(
+                      height: longueur / 35,
+                    ),
 
 
 
@@ -2338,83 +2343,83 @@ String messageAdd="";
 
 
   Row
-              (
-                children: <Widget>[
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                  new Container(
-                    width: 23 * largeur / 25,
-                    height: longueur / 6,
-                 
-                    padding: const EdgeInsets.only(bottom: 16.0),
-                    child: TextField(
-                      keyboardType: TextInputType.multiline,
-                      controller: messagecontroler,
-                        decoration: InputDecoration(
-                            labelText: 'Message additionnel ${300-messagecontroler.text.length}', border: OutlineInputBorder()),
-                      onSubmitted: (text) {
-                        print("suis dehor ");
-                      },
-                      expands: true,
-                      maxLines: null,
-                      minLines: null,
-                      onChanged: (text) {
-                        
-                        setState(() {
-                        if(messagecontroler.text.length<=300){
-                          messageAdd=text;
-                        }else{
-                          messagecontroler.text=messageAdd;
-                        }
-                        });
-                      },
-                      showCursor: true,
-                     
+                    (
+                      children: <Widget>[
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                        new Container(
+                          width: 23 * largeur / 25,
+                          height: longueur / 6,
+                       
+                          padding: const EdgeInsets.only(bottom: 16.0),
+                          child: TextField(
+                            keyboardType: TextInputType.multiline,
+                            controller: messagecontroler,
+                              decoration: InputDecoration(
+                                  labelText: 'Message additionnel ${300-messagecontroler.text.length}', border: OutlineInputBorder()),
+                            onSubmitted: (text) {
+                              print("suis dehor ");
+                            },
+                            expands: true,
+                            maxLines: null,
+                            minLines: null,
+                            onChanged: (text) {
+                              
+                              setState(() {
+                              if(messagecontroler.text.length<=300){
+                                messageAdd=text;
+                              }else{
+                                messagecontroler.text=messageAdd;
+                              }
+                              });
+                            },
+                            showCursor: true,
+                           
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur / 25,
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    width: largeur / 25,
-                  ),
-                ],
-              ),
 
 
 
 
 
-              GestureDetector
-              (
-                onTap: () {
+                    GestureDetector
+                    (
+                      onTap: () {
 
-                  
+                        
  
-              if(nomcontroler.text.length>0&&
-              telephonecontroler.text.length>0&&
-              villecontroler.text.length>0&&
-              programechoisi.length>0&&
-              specialitechoisi.length>0
-        
+                    if(nomcontroler.text.length>0&&
+                    telephonecontroler.text.length>0&&
+                    villecontroler.text.length>0&&
+                    programechoisi.length>0&&
+                    specialitechoisi.length>0
               
-              
-              ){
-                testConnection();
-              }else{
+                    
+                    
+                    ){
+                      testConnection();
+                    }else{
 
 
  if(nomcontroler.text.length==0
-        
               
-              
-              ){
-                    setState(() {
-                      nomColors=Colors.red;
-                    });
-              }else{
-                setState(() {
-                      nomColors=Colors.blue;
-                    });
-              }
+                    
+                    
+                    ){
+                          setState(() {
+                            nomColors=Colors.red;
+                          });
+                    }else{
+                      setState(() {
+                            nomColors=Colors.blue;
+                          });
+                    }
 
 
 
@@ -2451,71 +2456,91 @@ String messageAdd="";
 
 
 
-              if(telephonecontroler.text.length==0
-        
+                    if(telephonecontroler.text.length==0
               
-              
-              ){
+                    
+                    
+                    ){
+                             setState(() {
+                            telephoneColors=Colors.red;
+                          });
+                    }else{
                        setState(() {
-                      telephoneColors=Colors.red;
-                    });
-              }else{
-                 setState(() {
-                      telephoneColors=Colors.blue;
-                    });
-              }
+                            telephoneColors=Colors.blue;
+                          });
+                    }
 
  
 
 
 
-               if(villecontroler.text.length==0
-        
+                     if(villecontroler.text.length==0
               
-              
-              ){
+                    
+                    
+                    ){
+                            setState(() {
+                            villeColors=Colors.red;
+                          });
+                    }else{
                       setState(() {
-                      villeColors=Colors.red;
-                    });
-              }else{
-                setState(() {
-                      villeColors=Colors.blue;
-                    });
-              }
+                            villeColors=Colors.blue;
+                          });
+                    }
 
 
 
 
-         
-              }
-                    
-                    
-                  
-                },
-                child: Center(
-                  child: Container(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      height: 60.0,
-                      child: Material(
-                          borderRadius: BorderRadius.circular(9.0),
-                          color: Colors.blue,
-                          child: Center(
-                              child: Text(
-                            'Valider',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Montserrat'),
-                          )))),
+               
+                    }
+                          
+                          
+                        
+                      },
+                      child: Center(
+                        child: Container(
+                            padding: EdgeInsets.only(left: 10, right: 10),
+                            height: 60.0,
+                            child: Material(
+                                borderRadius: BorderRadius.circular(9.0),
+                                color: Colors.blue,
+                                child: Center(
+                                    child: Text(
+                                  'Valider',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Montserrat'),
+                                )))),
+                      ),
+                    ),
+                    SizedBox(
+                      height: longueur / 35,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(
-                height: longueur / 35,
-              ),
+             
+              ],
+            ),
+          ),
+             Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width*0.4,
+          child: Row(
+            children: <Widget>[
+              Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by ',),
+               GestureDetector(
+                 
+               onTap: () async{
+                              await launch('https://minse.io');
+                            },
+                 
+                 child: Text(' MINSE')),
             ],
           ),
-          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.center,)
+        ),
+      )
         ],
       )
       
