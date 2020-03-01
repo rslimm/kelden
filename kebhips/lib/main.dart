@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Carousel',
+      title: 'K E B H I P S',
       home: ImageCarousel(),
     );
   }
@@ -724,7 +724,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
       child: Text('This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects. This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects.', style: TextStyle(fontSize: 20.0),
       ),
     textDirection: TextDirection.ltr,
-    animationDuration: Duration(seconds: 40),
+    animationDuration: Duration(seconds: 30),
     directionMarguee: DirectionMarguee.oneDirection,
 
 
@@ -735,7 +735,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
 
       ),
 
-      bottomSheet: Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.end,),
+      bottomSheet: Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by :MINSE:', textAlign: TextAlign.end,),
 
     );
 
