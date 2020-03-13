@@ -2,6 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:kebhips/popup/popup.dart';
 import 'package:kebhips/popup/popup_content.dart';
+
+import '../main.dart';
 //void main() => runApp(MyApp());
 
 //      Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM'),
@@ -12,6 +14,7 @@ class AdmissionDashboard extends StatelessWidget {
 
 
     return Scaffold(
+      drawer: AppDrawer(),
       body: DashBoard(),
     );
   }
@@ -673,92 +676,3 @@ Widget _popupBody(String condition,String niveau,String document, String pension
 
   );
 }
-
-
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
-          ListTile(
-            title: Text('KEBHIPS'),
-            onTap: (){
-
-            },
-          )
-
-
-        ],
-      ),
-    );
-  }
-}
-
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-    margin: EdgeInsets.zero,
-    padding: EdgeInsets.zero,
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/logo-off-kelden-v.png'))
-    ),
-  );
-}
-
-
-

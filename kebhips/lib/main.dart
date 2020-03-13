@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/services.dart';
 import 'package:kebhips/Pages/AdministrationPage.dart';
+import 'package:kebhips/Pages/AdministrationPageCard.dart';
 import 'package:kebhips/Pages/AdmissionDashboard.dart';
 import 'package:kebhips/Pages/GalleryPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'Pages/CampusLife.dart';
 import 'Pages/RegistrationPage.dart';
 import 'Pages/NousContacter.dart';
 import 'Pages/OnlineCoursesPage.dart';
-import 'Pages/SocialMaediaPage.dart';
+import 'Pages/SocialMediaPage.dart';
 import 'Pages/Test.dart';
 import 'Pages/TimeTablePage1.dart';
 import 'package:marquee_widget/marquee_widget.dart';
@@ -65,7 +67,7 @@ class AppDrawer extends StatelessWidget{
                         MaterialPageRoute(builder: (context) => TimeTablePage()));
           },
         ),
-         
+
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -79,7 +81,7 @@ class AppDrawer extends StatelessWidget{
                         MaterialPageRoute(builder: (context) => AdmissionDashboard()));
           },
         ),
-         
+
 
         //  _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
           new Divider(
@@ -124,9 +126,9 @@ class AppDrawer extends StatelessWidget{
                   MaterialPageRoute(builder: (context) => SocialMediaPage()));
             },
           ),
-         
-         
-        
+
+
+
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -140,7 +142,7 @@ class AppDrawer extends StatelessWidget{
                         MaterialPageRoute(builder: (context) => SocialMediaPage()));
           },
         ),
-        
+
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -154,7 +156,7 @@ class AppDrawer extends StatelessWidget{
                         MaterialPageRoute(builder: (context) => GalleryPage()));
           },
         ),
-      
+
           new Divider(
             color: Colors.amber.withOpacity(0.9),
           ),
@@ -168,8 +170,8 @@ class AppDrawer extends StatelessWidget{
                         MaterialPageRoute(builder: (context) => NousContacter()));
           },
         ),
-         
-          
+
+
            ListTile(
             title: Text('EXIT'),
              trailing: Icon(Icons.exit_to_app,color: Colors.black,),
@@ -328,9 +330,14 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                          Container(
-                              margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.table_chart, size: 50.0, color: Colors.white,)),
-                          new Text('Programmes', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                              new Text('Programmes', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        Container(
+                              margin: EdgeInsets.only(
+                                  top: 10.0),child: new Icon(
+                                  Icons.table_chart, size: 50.0, color: Colors.white,
+                              )
+                          ),
+                              new Text('Programs', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
 
                       ],
                     ),
@@ -373,8 +380,10 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.person_add, size: 50.0, color: Colors.white,)),
                         new Text('Inscription', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.person_add, size: 50.0, color: Colors.white,)),
+                        new Text('Registration', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+
 
                       ],
                     ),
@@ -396,8 +405,11 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.leak_add, size: 50.0, color: Colors.white,)),
                         new Text('Cours en ligne', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.leak_add, size: 50.0, color: Colors.white,)),
+                        new Text('Online Studies', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+
+
 
                       ],
                     ),
@@ -421,8 +433,10 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.favorite, size: 50.0, color: Colors.white,)),
                         new Text('Vie au Campus', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.favorite, size: 50.0, color: Colors.white,)),
+                        new Text('Life on Campus', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+
 
                       ],
                     ),
@@ -434,7 +448,7 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                   onTap: (){
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AdministrationPage()));
+                        MaterialPageRoute(builder: (context) => AdministrationPageCard()));
                   },
                   child: new Card(
                     color: Colors.deepPurpleAccent,
@@ -466,9 +480,9 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        new Text('Réseau Social', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                         Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.accessibility_new, size: 50.0, color: Colors.white,)),
-                        new Text('Réseaux Sociaux', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-
+                        new Text('Social Media', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ),
@@ -490,9 +504,9 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.picture_in_picture, size: 50.0, color: Colors.white,)),
                         new Text('Galerie', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-
+                        Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.picture_in_picture, size: 50.0, color: Colors.white,)),
+                        new Text('Gallery', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ),
@@ -512,9 +526,9 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        new Text('Contactez nous', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                         Container(margin: EdgeInsets.only(top: 10.0),child: new Icon(Icons.message, size: 50.0, color: Colors.white,)),
-                        new Text('Laisser un message', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-
+                        new Text('Contact Us', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ),
@@ -720,22 +734,37 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
 
     ),
 
-  Marquee(
-      child: Text('This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects. This project is a starting point for a Dart package, a library module containing code that can be shared easily across multiple Flutter or Dart projects.', style: TextStyle(fontSize: 20.0),
+ Marquee(
+      child: Text('Location: KEBHIPS is located behind Lycee de Biyem-Assi, Yaounde Cameroon. Re-openning Dates: for nationnal one year training programs under MINEFOP, we have two re-openning dates every year; April and October. For HND, BTS and Degree programs re-openning is october every year; Certifications and Short-term programs has no fix re-opening dates, you can start at any time. Quick contact: 671-909-004 / 674-838-385 / 695-556-294.      Localisation: Nous sommes situés derrière le lycée de Biyem-Assi Yaoundé-Cameroun. Rentrée scolaire: pour les formations de un an du MINEFOP, nous avons deux rentrées scolaire chaque année; Avril et Octobre, pour BTS, HND et les licences professionnelles, la rentrée scolaire est prévu au mois d\'octobre de chaque année; les Certifications et les formations a la carte n\'ont pas de rentrée fixes, vous pouvez commencez à tout moment.    Contact: 671-909-004 / 674-838-385 / 695-556-294', style: TextStyle(fontSize: 20.0),
       ),
     textDirection: TextDirection.ltr,
-    animationDuration: Duration(seconds: 30),
+    animationDuration: Duration(seconds: 80),
     directionMarguee: DirectionMarguee.oneDirection,
 
 
   ),
   avecInscription(),
 
+
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Row(
+              children: <Widget>[
+                Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                GestureDetector(
+                    onTap: () async{
+                      await launch('https://minse.io');
+                    },
+                    child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+              ],
+            ),
+          )
+
+
      ],
 
       ),
 
-      bottomSheet: Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by :MINSE:', textAlign: TextAlign.end,),
 
     );
 
@@ -747,3 +776,24 @@ class _ImageCarouselState extends State<ImageCarousel> with SingleTickerProvider
     super.dispose();
   }
 }
+
+
+
+//ancien code pour la com de MINSE
+/*
+Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width*0.7,
+              child: Row(
+                children: <Widget>[
+                  Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ',),
+                  GestureDetector(
+                      onTap: () async{
+                        await launch('https://minse.io');
+                      },
+                      child: Text(' MINSE')),
+                ],
+              ),
+            ),
+          )
+ */

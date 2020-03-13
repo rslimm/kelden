@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../main.dart';
 
 
 class OnlineCoursesPage extends StatefulWidget {
@@ -14,6 +17,7 @@ class _OnlineCoursesPageState extends State<OnlineCoursesPage> {
         title: new Text('K E B H I P S', textAlign: TextAlign.center,),
         backgroundColor: Colors.blue[900],
       ),
+      drawer: AppDrawer(),
       body: ListView(
         children: <Widget>[
           Container(
@@ -28,9 +32,9 @@ class _OnlineCoursesPageState extends State<OnlineCoursesPage> {
                             'leur maison etc...'
             , textAlign: TextAlign.justify,),
           ),
-          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM', textAlign: TextAlign.center,)
         ],
       ),
+      bottomSheet: Text(' KEBHIPS©${DateTime.now().year.toString()}. Powered by MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
     );
   }
 }

@@ -15,20 +15,6 @@ class BachelorSpecialitiesPage extends StatefulWidget{
 
 class _BachelorSpecialitiesPageState extends State<BachelorSpecialitiesPage> {
 
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
       double longueur = MediaQuery.of(context).size.height;
@@ -452,34 +438,4 @@ List getCourses() {
             "Civil service, Hospitals and private clinics, NGOs (Non-Governmental Organizations), Self-employment, Food industry, Occupational medicine."
     ),
   ];
-}
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/s1.jpg'))
-      ),
-  );
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../main.dart';
+
 
 class SocialMediaPage extends StatefulWidget {
   @override
@@ -15,8 +17,8 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
         title: new Text('Follow us', textAlign: TextAlign.center),
         backgroundColor: Colors.blue[900],
       ),
-      
-      body: ListView(
+        drawer: AppDrawer(),
+        body: ListView(
         children: <Widget>[
           Center(
             child: new Column(
@@ -69,6 +71,22 @@ class _SocialMediaPageState extends State<SocialMediaPage> {
             ),
 
           ),
+
+          SizedBox(height: 20.0,),
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Row(
+              children: <Widget>[
+                Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                GestureDetector(
+                    onTap: () async{
+                      await launch('https://minse.io');
+                    },
+                    child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+              ],
+            ),
+          )
+
         ],
       )
     );

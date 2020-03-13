@@ -31,7 +31,7 @@ dependencies:
   auto_size_text: ^2.1.0
   flutter_launcher_icons:
   flutter_sms: ^1.1.0
-  flutter_mailer: ^0.4.1+1
+  flutter_mailer: ^0.4.2
   sms: ^0.2.4
   flutter_email_sender: ^2.2.2
   image_picker: ^0.6.3+1
@@ -94,6 +94,10 @@ flutter:
      - assets/facebook-icon.jpg
      - assets/twitter-logo.jpg
      - assets/linkedin.jpg
+     - assets/LeDirecteur2.jpg
+     - assets/georges.jpg
+     - assets/sergeo.jpg
+     - assets/compp.jpg
 
 
 

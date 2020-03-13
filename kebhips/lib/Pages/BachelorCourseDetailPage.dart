@@ -14,22 +14,6 @@ class BachelorCourseDetailPage extends StatefulWidget{
 
 class _BachelorCourseDetailPageState extends State<BachelorCourseDetailPage> {
 
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
       double longueur = MediaQuery.of(context).size.height;

@@ -8,19 +8,6 @@ class DMinfopCourseDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    /*
-
-    final levelIndicator = Container(
-      child: Container(
-        child: LinearProgressIndicator(
-            backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-            value: course.indicatorValue,
-            valueColor: AlwaysStoppedAnimation(Colors.green)),
-      ),
-    );
-
-    */
-
 
     final coursePrice = Container(
       padding: const EdgeInsets.all(7.0),
@@ -53,32 +40,6 @@ class DMinfopCourseDetailPage extends StatelessWidget {
         ),
         SizedBox(height: 20.0),
 
-        /*
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(flex: 1, child: levelIndicator),
-            Expanded(
-                flex: 6,
-
-
-
-                child: Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      course.level,
-                      style: TextStyle(color: Colors.white),
-                    )
-                )
-
-
-            ),
-            Expanded(flex: 1, child: coursePrice)
-          ],
-        ),
-
-       */
 
       ],
     );
@@ -120,22 +81,6 @@ class DMinfopCourseDetailPage extends StatelessWidget {
       course.content,
       style: TextStyle(fontSize: 18.0),
     );
-
-
-    /*
-    final readButton = Container(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        width: MediaQuery.of(context).size.width,
-        child: RaisedButton(
-          onPressed: () => {},
-          color: Color.fromRGBO(58, 66, 86, 1.0),
-          child:
-          Text("TAKE THIS LESSON", style: TextStyle(color: Colors.white)),
-        )
-    );
-
-   */
-
 
     final bottomContent = Container(
       margin: EdgeInsets.only(top: 0.0),

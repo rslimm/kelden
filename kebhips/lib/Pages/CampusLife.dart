@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../main.dart';
 
 
 class CampusLifePage extends StatefulWidget {
@@ -14,6 +17,7 @@ class _CampusLifePage extends State<CampusLifePage> {
         title: new Text('K E B H I P S', textAlign: TextAlign.center,),
         backgroundColor: Colors.blue[900],
       ),
+      drawer: AppDrawer(),
       body: ListView(
         children: <Widget>[
           Container(
@@ -48,6 +52,24 @@ class _CampusLifePage extends State<CampusLifePage> {
                 'Jeudi (Habillement décent au choix), Vendredi (Survettement)'
               , textAlign: TextAlign.justify,),
           ),
+
+          SizedBox(height: 20.0,),
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Center(
+              child: Row(
+                children: <Widget>[
+                  Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                  GestureDetector(
+                      onTap: () async{
+                        await launch('https://minse.io');
+                      },
+                      child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+                ],
+              ),
+            ),
+          )
+
         ],
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
+import '../main.dart';
+
 class HndSpecialitiesPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -209,7 +211,7 @@ List getCourses() {
             "Assistant human resource manager, Assistant to the person in charge of human resources, Assistant to the directorate, Officer in charge of recruitment, Manager of salaries."
     ),
     Course(
-        title: "Logistics and Transports",
+        title: "Transports and Logistics Management",
         //level: "Intermidiate",
         //indicatorValue: 0.66,
         price: 30,
@@ -220,8 +222,8 @@ List getCourses() {
             "Manager of transport units, Inventory Manager, Warehouse, Stock Control and Store Keeper, Purchasing manager, Logistics Engineer, Supply Chain Manager, International Logistics Manager, Analyst, Logistics Consultant, Transport and Logistics Services Provider, Authorized customs agent, Controller of SGS, Import and Export agent, Intermedaite staff members of the Maritime Administration, Port Officials/Administrators, Shipping Line Personnel, Shipping Agency Personnel, Maritime Controllers, Ship Brokers, Customs Brokers, Consolidators, Martime/Shipping Teachers, Marine Insurance Officials/Personnel, Customs Officials, Logistics Officers, Transport Officers, Supply Chain Officers, Commercial Managers, Freight Managers, Delivery Officers, Terminal Operators."
     ),
     Course(
-        title: "Local Goverment Management\n"
-               "Local Goverment Administration",
+        title: "Local Government Management\n"
+               "Local Government Administration",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -232,8 +234,8 @@ List getCourses() {
             "Public accountants, Paying Treasurers, Cashiers, Finance officers."
     ),
     Course(
-        title: "Local Goverment Management\n"
-            "Local Goverment Accounting and public finances",
+        title: "Local Government Management\n"
+            "Local Government Accounting and Public Finance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -244,8 +246,8 @@ List getCourses() {
             "Public accountants, Paying treasurers, Cashiers, Receiver of finances."
     ),
     Course(
-        title: "Local Goverment Management\n"
-            "Local Goverment Taxation",
+        title: "Local Government Management\n"
+            "Local Government Taxation",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -323,6 +325,17 @@ List getCourses() {
     ),
     Course(
         title: "Software Engineering",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "This specialty aims to train specialists capable of developing computer applications in various fields, using their needs study, analysis (Merise, UML ...) and coding skills.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "IT Project Manager, Software Consultant, Application Developer, System Administrator."
+    ),
+    Course(
+        title: "Hardware Maintenance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -416,86 +429,4 @@ List getCourses() {
             "Civil service, Hospitals and private clinics, NGOs (Non-Governmental Organizations), Self-employment, Food industry, Occupational medicine."
     ),
   ];
-}
-
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
-          ListTile(
-            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
-            onTap: (){
-
-            },
-          )
-        ],
-      ),
-    );
-  }
-}
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-    margin: EdgeInsets.zero,
-    padding: EdgeInsets.zero,
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/logo-off-kelden-v.png'))
-    ),
-  );
 }

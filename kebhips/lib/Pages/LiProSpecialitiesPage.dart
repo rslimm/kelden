@@ -10,7 +10,7 @@ class LiProSpecialitiesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new ListPage(title: 'Spécialités BT'),
+      home: new ListPage(title: 'Spécialités Licence Pro'),
       // home: DetailPage(),
     );
   }
@@ -55,38 +55,6 @@ class _ListPageState extends State<ListPage> {
       subtitle: Row(
         children: <Widget>[
 
-          /*
-
-          Expanded(
-              flex: 1,
-              child: Container(
-                // tag: 'hero',
-                child: LinearProgressIndicator(
-                    backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-                    value: course.indicatorValue,
-                    valueColor: AlwaysStoppedAnimation(Colors.green)),
-              )
-          ),
-
-         */
-
-          /*
-
-          Expanded(
-            flex: 4,
-
-          /*
-            child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Text(course.level,
-                    style: TextStyle(color: Colors.white)
-                )
-            ),
-          */
-
-          )
-
-          */
 
         ],
       ),
@@ -493,36 +461,4 @@ List getCourses()
     ),
 
   ];
-}
-
-
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/logo-off-kelden-v.png'))
-      ),
-  );
 }

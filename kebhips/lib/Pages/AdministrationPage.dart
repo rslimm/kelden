@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../main.dart';
 
 
 class AdministrationPage extends StatefulWidget {
@@ -11,9 +14,11 @@ class _AdministrationPageState extends State<AdministrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue[900],
         centerTitle: true,
         title: Text('K E B H I P S', style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),),
       ),
+      drawer: AppDrawer(),
       body: new ListView(
         children: <Widget>[
           new SizedBox(height: 15.0,),
@@ -87,7 +92,25 @@ class _AdministrationPageState extends State<AdministrationPage> {
                             'resourceful and develop a can--do attitude that will make all the difference in your professional life. WE SET THE PACE FOR OTHERS TO FOLLOW.',
             textAlign: TextAlign.justify,
             ),
+          ),
+          SizedBox(height: 20.0,),
+
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Center(
+              child: Row(
+                children: <Widget>[
+                  Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                  GestureDetector(
+                      onTap: () async{
+                        await launch('https://minse.io');
+                      },
+                      child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+                ],
+              ),
+            ),
           )
+
               ]
           ),
       );

@@ -53,33 +53,6 @@ class CourseDetailPage extends StatelessWidget {
         ),
         SizedBox(height: 20.0),
 
-       /*
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(flex: 1, child: levelIndicator),
-            Expanded(
-                flex: 6,
-
-
-
-                child: Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      course.level,
-                      style: TextStyle(color: Colors.white),
-                    )
-                )
-
-
-            ),
-            Expanded(flex: 1, child: coursePrice)
-          ],
-        ),
-
-       */
-
       ],
     );
 
@@ -125,21 +98,6 @@ class CourseDetailPage extends StatelessWidget {
       ),
       textAlign: TextAlign.justify,
     );
-
-
-   /*
-    final readButton = Container(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        width: MediaQuery.of(context).size.width,
-        child: RaisedButton(
-          onPressed: () => {},
-          color: Color.fromRGBO(58, 66, 86, 1.0),
-          child:
-          Text("TAKE THIS LESSON", style: TextStyle(color: Colors.white)),
-        )
-    );
-
-   */
 
 
     final bottomContent = Container(

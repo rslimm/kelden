@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 import 'CardRow.dart';
 import 'TimeTablePage2.dart';
@@ -24,45 +25,26 @@ class _TimeTablePageState extends State<TimeTablePage> {
         children: <Widget>[
           //new GradientAppBar("K E B H I P S"),
           new TimeTablePage2(),
-          new Text('KEBHIPS © ${DateTime.now().year.toString()}. Powered by MINSE.COM')
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Row(
+              children: <Widget>[
+                Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                GestureDetector(
+                    onTap: () async{
+                      await launch('https://minse.io');
+                    },
+                    child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+              ],
+            ),
+          )
         ],
       ),
+
+   
     );
   }
 }
-
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/logo-off-kelden-v.png'))
-      ),
-  );
-}
-
-
 
 
 class GradientAppBar extends StatelessWidget {
@@ -106,6 +88,5 @@ class GradientAppBar extends StatelessWidget {
       ),
     );
   }
-
 
 }

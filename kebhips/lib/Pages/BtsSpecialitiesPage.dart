@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
+import '../main.dart';
+
 class BtsSpecialitiesPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -100,9 +102,12 @@ class _ListPageState extends State<ListPage> {
 
     Card makeCard(Course lesson) => Card(
       elevation: 8.0,
+      //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: Container(
-        decoration: BoxDecoration(color: Colors.blue[900]),
+        decoration: BoxDecoration(
+            color: Colors.grey[500],
+        ),
         child: makeListTile(lesson),
       ),
     );
@@ -301,7 +306,7 @@ List getCourses()
             "Banques commerciales, Etablissements financiers, Bourses des valeurs mobilières, Entreprises d'assurance, Banque centrale, Commision bancaire, Etablissements de microfinance, Caisses d'épargne et service financier de la poste, Ministères en charge de la monnaie et des quetions économiques et financières."
     ),
     Course(
-        title: "Assurances",
+        title: "Assurance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -388,17 +393,6 @@ List getCourses()
             "Cette spécialité a pour objectif de former des techniciens supérieurs capables d’entrer en contact indirect avec la clientèle. Ils mèneront des actions pour la capter, la fidéliser et lui vendre les produits et/ou les services répondant à ses attentes. Ils seront donc à même de définir une stratégie en utilisant des compétences comme le web-marketing, le référencement, la rédaction web, la conception de sites internet ou encore les réseaux sociaux.\n\n"
             "Débouchés:\n\n"
             "Community manager, Webmarketeur, Chargé de l’e-commerce d’une entreprise."
-    ),
-    Course(
-        title: "Management Evènementiel",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n\n"
-            "Le BTS spécialité Management évènementiel vise à former des techniciens capables de prendre en charge la conception, les préparatifs et l‟organisation matérielle et logistique des manifestations de toutes sortes (mariage, réception, séminaire, conférence…) dans le cadre de prestations de services à des particuliers, à des collectivités locales, associations, entreprises publiques ou privées.\n\n"
-            "Débouchés:\n\n"
-            "Stratège évènementiel, Stratège de communication multicanal, Sémiostratège, Wedding planner, Production de spectacles, Manager de l‟évènementiel, Indépendant et des projets (contenus évènementiels) pour des entreprises en Freelance."
     ),
     Course(
         title: "Administration Scolaire",
@@ -495,86 +489,3 @@ List getCourses()
 
 
 
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Vie au campus',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Laissez un message',),
-          ListTile(
-            title: Text('KEBHIPS © ${DateTime.now().year.toString()}'),
-            onTap: (){
-
-            },
-          )
-
-
-        ],
-      ),
-    );
-  }
-}
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-
-    margin: EdgeInsets.zero,
-    padding: EdgeInsets.zero,
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/logo-off-kelden-v.png'))
-    ),
-
-  );
-}

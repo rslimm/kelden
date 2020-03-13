@@ -9,11 +9,13 @@ class DMinfopSpecialitiesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      drawer: AppDrawer(),
       body: new ListPage(title: 'K E B H I P S'),
       // home: DetailPage(),
     );
   }
 }
+
 
 class ListPage extends StatefulWidget {
   ListPage({Key key, this.title}) : super(key: key);
@@ -53,39 +55,6 @@ class _ListPageState extends State<ListPage> {
 
       subtitle: Row(
         children: <Widget>[
-
-          /*
-
-          Expanded(
-              flex: 1,
-              child: Container(
-                // tag: 'hero',
-                child: LinearProgressIndicator(
-                    backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-                    value: course.indicatorValue,
-                    valueColor: AlwaysStoppedAnimation(Colors.green)),
-              )
-          ),
-
-         */
-
-          /*
-
-          Expanded(
-            flex: 4,
-
-          /*
-            child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Text(course.level,
-                    style: TextStyle(color: Colors.white)
-                )
-            ),
-          */
-
-          )
-
-          */
 
         ],
       ),
@@ -164,7 +133,7 @@ class _ListPageState extends State<ListPage> {
       backgroundColor: Color(0xFF736AB7),
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: new Text("Spécilialités D MINEFOP", textAlign: TextAlign.center,),
+        title: new Text("Spécilialités MINEFOP", textAlign: TextAlign.center,),
       ),
       drawer: AppDrawer(),
       body: makeBody,
@@ -231,7 +200,7 @@ List getCourses() {
             "Chef de projet informatique, Développeur informatique, Technicien de maintenance en distribution automatique."
     ),
     Course(
-        title: "Comptabilité Matière",
+        title: "Comptabilité/Matières",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
@@ -352,35 +321,4 @@ List getCourses() {
             "Avoir plus d'ouverture dans la recherche d'un emploi."
     ),
   ];
-}
-
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-    margin: EdgeInsets.zero,
-    padding: EdgeInsets.zero,
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/logo-off-kelden-v.png'))
-    ),
-  );
 }
