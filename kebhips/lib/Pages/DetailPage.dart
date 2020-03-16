@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kebhips/Model/ProgrammesDetails.dart';
 import 'package:kebhips/Pages/TimeTablePage1.dart';
+import '../main.dart';
 import 'ProgrammesSumary.dart';
 import 'Separator.dart';
 import 'TextStyle.dart';
@@ -16,6 +17,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      drawer: AppDrawer(),
       body: new Container(
         constraints: new BoxConstraints.expand(),
         color: new Color(0xFF736AB7),
@@ -84,7 +86,8 @@ class DetailPage extends StatelessWidget {
               ],
             ),
           ),
-          programmesDetails.buttonTheme,
+          //
+          programmesDetails.gestureDetector,
         ],
       ),
     );

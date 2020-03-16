@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../main.dart';
 import 'CardRow.dart';
 import 'TimeTablePage2.dart';
 
@@ -14,113 +16,35 @@ class _TimeTablePageState extends State<TimeTablePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.blue[900],
-        title: Text('Programmes'),
+        title: Text('Programmes', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40.0),),
       ),
       drawer: AppDrawer(),
       body: new Column(
         children: <Widget>[
           //new GradientAppBar("K E B H I P S"),
           new TimeTablePage2(),
-        ],
-      ),
-    );
-  }
-}
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
-          ListTile(
-            title: Text('KEBHIPS'),
-            onTap: (){
-
-            },
+          Container(
+            //width: MediaQuery.of(context).size.width*0.5,
+            child: Row(
+              children: <Widget>[
+                Text('KEBHIPS©${DateTime.now().year.toString()}. Powered by ', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),),
+                GestureDetector(
+                    onTap: () async{
+                      await launch('https://minse.io');
+                    },
+                    child: Text(' MINSE.IO', textAlign: TextAlign.center,style: TextStyle(fontSize: 10.0),)),
+              ],
+            ),
           )
-
-
         ],
       ),
+
+   
     );
   }
 }
-
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/logo-off-kelden-v.png'))
-      ),
-  );
-}
-
-
 
 
 class GradientAppBar extends StatelessWidget {
@@ -164,6 +88,5 @@ class GradientAppBar extends StatelessWidget {
       ),
     );
   }
-
 
 }

@@ -53,52 +53,28 @@ class CourseDetailPage extends StatelessWidget {
         ),
         SizedBox(height: 20.0),
 
-       /*
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(flex: 1, child: levelIndicator),
-            Expanded(
-                flex: 6,
-
-
-
-                child: Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      course.level,
-                      style: TextStyle(color: Colors.white),
-                    )
-                )
-
-
-            ),
-            Expanded(flex: 1, child: coursePrice)
-          ],
-        ),
-
-       */
-
       ],
     );
 
     final topContent = Stack(
       children: <Widget>[
         Container(
+
             padding: EdgeInsets.only(left: 10.0,),
             height: MediaQuery.of(context).size.height * 0.5,
             decoration: new BoxDecoration(
+
               image: new DecorationImage(
                 image: new AssetImage("assets/s3.jpg"),
                 fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(Colors.indigoAccent.withOpacity(0.9), BlendMode.dstATop)
               ),
             )),
         Container(
           height: MediaQuery.of(context).size.height * 0.4,
           padding: EdgeInsets.only(top:40.0, left: 20.0),
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(color: Color(0xFF736AB7)),
+
           child: Center(
             child: topContentText,
           ),
@@ -118,23 +94,10 @@ class CourseDetailPage extends StatelessWidget {
 
     final bottomContentText = Text(
       course.content,
-      style: TextStyle(fontSize: 18.0),
+      style: TextStyle(fontSize: 18.0 ,
+      ),
+      textAlign: TextAlign.justify,
     );
-
-
-   /*
-    final readButton = Container(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        width: MediaQuery.of(context).size.width,
-        child: RaisedButton(
-          onPressed: () => {},
-          color: Color.fromRGBO(58, 66, 86, 1.0),
-          child:
-          Text("TAKE THIS LESSON", style: TextStyle(color: Colors.white)),
-        )
-    );
-
-   */
 
 
     final bottomContent = Container(
@@ -150,7 +113,15 @@ class CourseDetailPage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
-        children: <Widget>[topContent, bottomContent],
+        children: <Widget>[topContent,
+        Container(
+            height: MediaQuery.of(context).size.height /2.3,
+            child: ListView(
+              children: <Widget>[
+                bottomContent,
+              ],
+            ))
+        ],
       ),
     );
   }

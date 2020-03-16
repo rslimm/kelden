@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
+import '../main.dart';
+
 class LiProSpecialitiesPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new ListPage(title: 'Spécialités BT'),
+      home: new ListPage(title: 'Spécialités Licence Pro'),
       // home: DetailPage(),
     );
   }
@@ -53,38 +55,6 @@ class _ListPageState extends State<ListPage> {
       subtitle: Row(
         children: <Widget>[
 
-          /*
-
-          Expanded(
-              flex: 1,
-              child: Container(
-                // tag: 'hero',
-                child: LinearProgressIndicator(
-                    backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-                    value: course.indicatorValue,
-                    valueColor: AlwaysStoppedAnimation(Colors.green)),
-              )
-          ),
-
-         */
-
-          /*
-
-          Expanded(
-            flex: 4,
-
-          /*
-            child: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: Text(course.level,
-                    style: TextStyle(color: Colors.white)
-                )
-            ),
-          */
-
-          )
-
-          */
 
         ],
       ),
@@ -162,8 +132,9 @@ class _ListPageState extends State<ListPage> {
 
       backgroundColor: Color(0xFF736AB7),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.blue[900],
-        title: new Text("Spécilialités BTS", textAlign: TextAlign.center,),
+        title: new Text("Spécialités Licence Pro", textAlign: TextAlign.center,),
       ),
       drawer: AppDrawer(),
       body: makeBody,
@@ -172,40 +143,44 @@ class _ListPageState extends State<ListPage> {
   }
 }
 
-List getCourses() {
+List getCourses()
+{
   return [
     Course(
-        title: "Administration des Collectivités Térritoriales",
+        title: "Gestion des Collectivités Térritoriales\n"
+            "Administration des Collectivités Térritoriales",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 20,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à former des praticiens chargés selon les fonctions occupées, de conseiller, d'assister les responsables locaux dans la définition juridique des politiques locales et dans la mise en œuvre de celles-ci.\n\n"
+            "Débouchés:\n\n"
+            "Adminsitrateur des collectivités territoriales, Comptabilite et Finances Publiques, Fiscalité des Collectes Territoriales, Attaché territorial."
     ),
     Course(
-        title: "Comptabilité et Finances publiques",
+        title: "Gestion des Collectivités Térritoriales\n"
+            "Comptabilité et Finances Publiques",
         //level: "Beginner",
         //indicatorValue: 0.33,
-        price: 50,
+        price: 20,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à former des techniciens supérieurs chargés de la gestion des communes, départements, régions et groupements à travers des méthodes novatrices de management et de financement tels que : l'analyse financière et fiscale rétrospective et prospective ; la stratégie intercommunale et la mutualisation des moyens ; la coopération décentralisée ; le choix des investissements ; la communication financière ; la consolidation des comptes et des risques ; l'évaluation des délégations de service public ; la gestion des dettes et des trésoreries avec des enjeux juridico-financiers des emprunts ; l'automatisation des programmes d'engagement et de règlement financiers.\n\n"
+            "Débouchés:\n\n"
+            "Comptables publics, Trésoriers payeurs, Caissiers, Receveur des finances."
     ),
     Course(
-        title: "Fiscalité des Collectivités Térritoriales",
-        //level: "Intermidiate",
-        //indicatorValue: 0.66,
-        price: 30,
+        title: "Gestion des Collectivités Térritoriales\n"
+            "Fiscalité des Collectivités Térritoriales",
+        //level: "Beginner",
+        //indicatorValue: 0.33,
+        price: 20,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "A l'issue de cette formation, les élus auront acquis les clefs pour comprendre l’organisation et le périmètre de la fiscalité des collectivités territoriales.\n\n"
+            "Débouchés:\n\n"
+            "Agent rattaché au service de la collecte des impôts, Agent d'appui au MINATD, Collaborateur du Secrétaire Général, du chef service du contentieux administratif, Chargé d'études auprès des magistrats municipaux."
     ),
     Course(
         title: "Comptabilité et Gestion des Entreprises",
@@ -213,10 +188,10 @@ List getCourses() {
         //indicatorValue: 0.66,
         price: 30,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "La spécialité Comptabilité et gestion des entreprises a pour but de munir les étudiants des connaissances et savoir-faire leur permettant de traduire de manière comptable, toutes les opérations commerciales ou financières et d‟établir les documents correspondants, d‟analyser les informations dont ils disposent pour préparer les décisions de gestion.\n\n"
+            "Débouchés:\n\n"
+            "Comptable en entreprise, Collaborateur comptable en cabinet, Assistant comptable dans les grandes entreprises, Gestion de la paie, Responsable comptable, Trésorier, Controleur de gestion."
     ),
     Course(
         title: "Gestion Logistique et Transport",
@@ -224,10 +199,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "La spécialité Gestion logistique et transport vise à former des experts dans l‟organisation et le management des opérations de transport et des prestations logistiques sur les marchés locaux, régionaux, nationaux et internationaux en tenant compte de la complémentarité des modes de transport et du développement durable. Ils maîtrisent à cet effet les langues étrangères, la communication et les techniques de négociation, les techniques de gestion et d‟optimisation des flux de marchandise, la gestion des entrepôts ou des plates-formes ainsi que l‟exploitation des réseaux de transports urbains.\n\n"
+            "Débouchés:\n\n"
+            "Responsable des unités de transport, Gestionnaire des stocks et des approvisionnements, Gestionnaire des réseaux d‟entrepôts et des plates-formes, Transitaire et prestataire logistique, Commissionnaire agrée en douane, Agent contrôleur de la SGS, Employé au Guichet unique, Manutentionnaire."
     ),
     Course(
         title: "Gestion des ONG",
@@ -235,10 +210,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "La spécialité Gestion des ONG conduit à la formation des techniciens disposant de solides connaissances dans l‟analyse des enjeux de l‟organisation, la compréhension et l‟usage des techniques de management, la conception et la conduite de projets, la négociation avec les partenaires.\n\n"
+            "Débouchés:\n\n"
+            "Agent administratif des ONG, Collaborateur au chef de projet, Assistant au chargé de mission de coopération et de développement."
     ),
     Course(
         title: "Gestion des Ressources Humaines",
@@ -246,10 +221,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Le BTS Gestion des ressources humaines vise à former des étudiants à même de réaliser le suivi administratif de la gestion du personnel (contrats, absences, congés, visites médicales, déclarations aux organismes sociaux) ainsi que la formation continue selon la législation sociale, la règlementation du travail et la politique des ressources humaines de la structure.\n\n"
+            "Débouchés:\n\n"
+            "Assistant Ressources Humaines, Adjoint au responsable des ressources humaines, Assistant de direction, Gestionnaire de paie, Chargé de recrutement, Gestionnaire d‟emploi."
     ),
     Course(
         title: "Gestion des Projets",
@@ -257,10 +232,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "La spécialité Gestion des projets vise à former des techniciens capables de conduire des projets d‟entreprises de tout secteur (industriel, service, commercial, technologique, culturel), à travers le développement de la compréhension de l‟entreprise et l‟acquisition des connaissances théoriques et compétences pratiques du management de projet.\n\n"
+            "Débouchés:\n\n"
+            "Assistant au chef de projet, Assistant marketing, Responsable de la communication, Planificateur de projet."
     ),
     Course(
         title: "Assistant Manager",
@@ -268,10 +243,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité qui remplace le BTS ‟‟Secrétariat de direction‟‟ forme les collaborateurs des directeurs généraux, des directeurs d‟unités ou des chefs de service. Organisés, rigoureux, dynamiques, discrets, ils soutiennent, facilitent et suivent le travail du responsable afin de le rendre plus efficace. L‟Assistant manager assure principalement le rôle d‟interface et de médiation entre l‟entreprise et son environnement. Il s‟occupe de l‟administration, de la communication, de l‟organisation du travail, de l‟aide à la décision et peut même prendre en charge un dossier spécialisé ou organiser un évènement.\n\n"
+            "Débouchés:\n\n"
+            "Assistant de manager, Assistant de direction, Assistant administartif, Assistant commercial, Assistant de communication, Assistant ressources humaines, Office manager."
     ),
     Course(
         title: "Management Evènementiel",
@@ -279,10 +254,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Le BTS spécialité Management évènementiel vise à former des techniciens capables de prendre en charge la conception, les préparatifs et l‟organisation matérielle et logistique des manifestations de toutes sortes (mariage, réception, séminaire, conférence…) dans le cadre de prestations de services à des particuliers, à des collectivités locales, associations, entreprises publiques ou privées.\n\n"
+            "Débouchés:\n\n"
+            "Stratège évènementiel, Stratège de communication multicanal, Sémiostratège, Wedding planner, Production de spectacles, Manager de l‟évènementiel."
     ),
     Course(
         title: "Banque et Finance",
@@ -290,21 +265,21 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à combler le déficit en nombre et en qualité en matière de ressources humaines dont les établissements de crédit ont besoin pour la conduite de leurs activités. En outre, elle fournit aux entreprises, quel que soit leur domaine d’activité, des collaborateurs pouvant leur permettre de tirer le maximum des opportunités que leur offre le système financier dans son évolution, son expansion et son arrimage à la finance mondiale.\n\n"
+            "Débouchés:\n\n"
+            "Banques commerciales, Etablissements financiers, Bourses des valeurs mobilières, Entreprises d'assurance, Banque centrale, Commision bancaire, Etablissements de microfinance, Caisses d'épargne et service financier de la poste, Ministères en charge de la monnaie et des quetions économiques et financières."
     ),
     Course(
-        title: "Assurance",
+        title: "Assurances",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité conduit à la formation des professionnels appelés à exercer des activités à caractère commercial, technique et de gestion dans le domain, de la souscription ou du règlement des sinistres dans des sociétés d‟assurance ou de la protection sociale en intégrant la relation client.\n\n"
+            "Débouchés:\n\n"
+            "Souscripteur, Conseiller, Chargé d'indemnisation, Gestionnaire assurance vie individuelle/collective, Redacteur production et/ou règlement, Collaborateur d'argent général ou de coursier d'assurance, Technicien d'assurance."
     ),
     Course(
         title: "Assistant Judiciare",
@@ -312,10 +287,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former des spécialistes immédiatement opérationnels dans les services juridiques d‟entreprises, les cabinets d‟Avocats, de conseils juridiques, de notaires, d‟huissiers, d‟expertise comptable et fiscale. L‟acquisition des concepts fondamentaux et la maîtrise des applications pratiques en constituent les objectifs pédagogiques.\n\n"
+            "Débouchés:\n\n"
+            "Cadres des firmes, cabinets d‟avocats et de conseils juridiques, Administrateur des associations, Administrateurs des organisations non gouvernementales nationales et internationales, Cadres gestionnaires des organisations internationales, Gestionnaire des contrats d'assurance, Services juridiques des entreprises, Bureau d'études (Finances-investissements), Administrations publiques éconimiques."
     ),
     Course(
         title: "Droit Foncier et Domanial",
@@ -323,10 +298,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former des spécialistes capables de gérer des dossiers relatifs aux activités foncières et domaniales tels que la procédure d‟acquisition des titres fonciers, des conflits fonciers, des cessions de patrimoines fonciers ou domaniaux.\n\n"
+            "Débouchés:\n\n"
+            "Juriste d'entreprise, Assistant de cabinet juridique, Assistant management, Administrateur des associations, Conseiller juridique, Gestionnaires de contrats, Services juridiques des entreprises."
     ),
     Course(
         title: "Gestion Fiscale",
@@ -334,10 +309,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former des cadres moyens capables de centraliser, de liquider, de déclarer et défendre les risques relevés par l„administration fiscale à travers les contrôles fiscaux ; de traiter les incidences fiscales des opérations courantes réalisées chez les clients du cabinet : produits imposables, charges déductibles, amortissements, dépréciations et approvisionnements, assujettissement ou non à la TVA.\n\n"
+            "Débouchés:\n\n"
+            "Comptables fiscalistes, Déclarant impôts, Assistant dans les cabinets de conseil fiscaux, Auditeur fiscal, Conseiller fiscal, Controlleur d'impôts, Cadres moyens d‟appui des administrations en général et du Ministère des finances."
     ),
     Course(
         title: "Douane et Transit",
@@ -345,10 +320,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former des techniciens supérieurs capables d‟accompagner les opérateurs du commerce extérieur dans la préparation et l‟accomplissement des opérations d‟importation et d‟exportation. Ils pourront également accomplir les formalités de dédouanement des marchandises et obtenir auprès de l‟Administration des Douanes, pour le compte des opérateurs économiques, des avantages et des privilèges prévus par la législation et la réglementation douanière.\n\n"
+            "Débouchés:\n\n"
+            "Commissionnaire en douane agréé, Déclarant dans les sociétés de transit et de commissionnaire en douane agréé, Responsable en charge du service extérieur dans les banques commerciales, Responsables transit dans les Administrations Publiques ; les Missions Diplomatiques, les Organisations Internationales ; les entreprises commerciales, de services et de production."
     ),
     Course(
         title: "Génie Logiciel",
@@ -356,10 +331,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à former des spécialistes capables de développer des applications informatiques dans divers domaines, en faisant appel à leurs capacités d'étude du besoin, d'analyse (Merise, UML...) et de codage.\n\n"
+            "Débouchés:\n\n"
+            "Chef de projet informatique, Consultant logiciel, Développeur d’applications, Administrateur de système."
     ),
     Course(
         title: "Infographie et Web design",
@@ -367,10 +342,22 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette  spécialité  forme  des  techniciens  supérieurs  maîtrisant  les  divers  aspects  de  la conception web et pouvant  développer  une créativité en web design en utilisant les CMS et les Framework  les  plus  demandés  dans  les  entreprises  pour  la  création  des  sites  dynamiques  et responsifs (adaptatif  tablette/Smartphone). Ils  sont  aussi  à  même  de  manipuler  les  scripts  et modules  permettant  d’ajouter  de  l’interactivité  dans  les  réalisations  (diaporamas,  slides…)  et maîtriser les techniques de renforcement naturel.\n\n"
+            "Débouchés:\n\n"
+            "Graphiste, Infographiste, Webdesigner, Motion designer, Assistant studio de créât."
+    ),
+
+    Course(
+        title: "E-Commerce",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former des techniciens supérieurs capables d’entrer en contact indirect avec la clientèle. Ils mèneront des actions pour la capter, la fidéliser et lui vendre les produits et/ou les services répondant à ses attentes. Ils seront donc à même de définir une stratégie en utilisant des compétences comme le web-marketing, le référencement, la rédaction web, la conception de sites internet ou encore les réseaux sociaux.\n\n"
+            "Débouchés:\n\n"
+            "Community manager, Webmarketeur, Chargé de l’e-commerce d’une entreprise."
     ),
     Course(
         title: "Management Evènementiel",
@@ -378,21 +365,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "E-Commerce",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Le BTS spécialité Management évènementiel vise à former des techniciens capables de prendre en charge la conception, les préparatifs et l‟organisation matérielle et logistique des manifestations de toutes sortes (mariage, réception, séminaire, conférence…) dans le cadre de prestations de services à des particuliers, à des collectivités locales, associations, entreprises publiques ou privées.\n\n"
+            "Débouchés:\n\n"
+            "Stratège évènementiel, Stratège de communication multicanal, Sémiostratège, Wedding planner, Production de spectacles, Manager de l‟évènementiel, Indépendant et des projets (contenus évènementiels) pour des entreprises en Freelance."
     ),
     Course(
         title: "Administration Scolaire",
@@ -400,32 +376,22 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "L'étudiant inscrit dans le cycle BTS spécialité Administration scolaire s'initie aux techniques d'analyse des faits et situations de la gouvernance en éducation. Ainsi outillé, il pourra être amené à construire des instruments d'analyse des politiques publiques en relation avec la gouvernance scolaire.\n\n"
+            "Débouchés:\n\n"
+            "Gestionnaire d'un projet éducatif, Animateur pédagogique, Conseiller pédagogique, Analyste des besoins de formation, Chef d'établissement scolaire."
     ),
-    Course(
-        title: "Didactique et Développement du Curriculum",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
+
     Course(
         title: "Orientation Scolaire et Professionnelle",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "L'étudiant inscrit dans le cycle BTS en orientation scolaire et professionnelle est amené à se familiariser avec les services éducatifs et complémentaires en matière d'orientation conseil en évolution constante. Il s'agit précisément de se situer et de structurer son action en tenant compte des rôles des différents acteurs nécessaires du système éducatif pour accroître la réussite et la qualification.\n\n"
+            "Débouchés:\n\n"
+            "Tutorat, Aide (counseling), Suivi-évaluation des projets éducatifs, Ingénieur de formation, Analystes des besoins de formation, Planification d'activités de vie scolaire, Orientation Conseil et professionnelles."
     ),
     Course(
         title: "Commerce Internationnal",
@@ -433,10 +399,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité a pour objectif de former les cadres intermédiaires des services export des entreprises maitrisant tous les aspects de la négociation commerciale, avec une bonne connaissance des marchés étrangers (culture, fonctionnement, particularités) mais aussi des connaissances générales en économie et en droit. Ils maitriseront également la logistique internationale et le fonctionnement des douanes.\n\n"
+            "Débouchés:\n\n"
+            "Agent export, Opérateur de douane, Commercial export, Manager des opérations de commerce international, Vendeur export, Assistant commercial export et import, Assistant acheteur / importateur international."
     ),
     Course(
         title: "Marketing Commerce Vente",
@@ -444,10 +410,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à répondre à un besoin exprimé par les entreprises : s‟entourer des commerciaux outillés, parfaitement imprégnés de la logique marketing, sensibilisés sur les besoins changeants du consommateur et orientés vers le développement des ventes dans un environnement caractérisé par la concurrence.\n\n"
+            "Débouchés:\n\n"
+            "Animateur de ventes, Attaché de la clientelle, Réprésentant commercial, Responsable des ventes."
     ),
     Course(
         title: "Sage-femme",
@@ -455,10 +421,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Le BTS spécialité Sage-femme vise à former des professionnelles de santé ayant pour mission d'accompagner les femmes enceintes tout au long de leur grossesse, de l'établissement du diagnostic jusqu'au jour de l'accouchement, d'animer les séances de préparation à l'accouchement et assurer seule l'accouchement, de s'occuper du nouveau-né et si nécessaire d'accomplir les gestes de réanimation et surveiller le rétablissement de la mère. La Sage-femme assure le suivi gynécologique de la femme (prescription et pose contraceptifs, réduction périnéale et IVG médicamenteuse).\n\n"
+            "Débouchés:\n\n"
+            "Fonction publique, Hôpitaux et cliniques privées, ONG (Organisations Non Gouvernementales), Auto-emploi, Secteur agroalimentaire, Médecine du travail."
     ),
     Course(
         title: "Sciences infimières",
@@ -466,10 +432,10 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette formation vise à mettre sur le marché de l'emploi des professionnels capables d'analyser une situation de santé, de prendre des décisions dans les limites de leur compétence et de mener des interventions seuls ou équipe multidisciplinaire.\n\n"
+            "Débouchés:\n\n"
+            "Fonction publique, Hôpitaux et cliniques privées, ONG (Organisations Non Gouvernementales), Auto-emploi, Secteur agroalimentaire, Médecine du travail."
     ),
     Course(
         title: "Techniques Pharmaceutiques",
@@ -477,114 +443,22 @@ List getCourses() {
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette spécialité vise à former des techniciens en pharmacie hautement qualifiés, capables de participer à la conception, la fabrication, l' administration et la conservation des médicaments sous la direction d'un pharmacien et fournir des soins pharmaceutiques holistiques de haute qualité dans divers contextes cliniques, industriels et universitaires au niveau local, national ou international.\n\n"
+            "Débouchés:\n\n"
+            "Techniciens en pharmacie, Assistant de Pharmacien, Pharmacien des hôpitaux, Travail dans l'industrie pharmaceutique ou dans la chaîne d'approvisionnement de médicaments, Fournisseur pharmaceutique, Pharmacovigilance, Industrie cosmétique."
     ),
     Course(
-        title: "Techniques de Laboratiore et d'Analyse Médicale",
+        title: "Techniques de Laboratoire et d'Analyse Médicale",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Cette formation vise à former des cadres à même de détecter par des examens en laboratoire, les différentes pathologies pouvant affecter le corps humains.\n\n"
+            "Débouchés:\n\n"
+            "Fonction publique, Hôpitaux et cliniques privées, ONG (Organisations Non Gouvernementales), Auto-emploi, Secteur agroalimentaire, Médecine du travail."
     ),
 
   ];
-}
-
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
-          ListTile(
-            title: Text('KEBHIPS'),
-            onTap: (){
-
-            },
-          )
-
-
-        ],
-      ),
-    );
-  }
-}
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/logo-off-kelden-v.png'))
-      ),
-  );
 }

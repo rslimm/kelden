@@ -2,18 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:kebhips/Model/Course.dart';
 import 'package:kebhips/Pages/CourseDetaiPage.dart';
 
-class BachelorSpecialitiesPage extends StatelessWidget {
-  // This widget is the root of your application.
+import '../main.dart';
+
+class BachelorSpecialitiesPage extends StatefulWidget{
+
+
+
+
+  @override
+  _BachelorSpecialitiesPageState createState() => _BachelorSpecialitiesPageState();
+}
+
+class _BachelorSpecialitiesPageState extends State<BachelorSpecialitiesPage> {
+
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+      double longueur = MediaQuery.of(context).size.height;
+    double largeur = MediaQuery.of(context).size.width;
+
+  
+
+      return new MaterialApp(
       debugShowCheckedModeBanner: false,
       home: new ListPage(title: 'Spécialités BT'),
       // home: DetailPage(),
     );
   }
+
+ 
 }
 
+ 
 class ListPage extends StatefulWidget {
   ListPage({Key key, this.title}) : super(key: key);
 
@@ -162,8 +181,9 @@ class _ListPageState extends State<ListPage> {
 
       backgroundColor: Color(0xFF736AB7),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.blue[900],
-        title: new Text("Spécilialités BTS", textAlign: TextAlign.center,),
+        title: new Text("Bachelor Degree Programs", textAlign: TextAlign.center,),
       ),
       drawer: AppDrawer(),
       body: makeBody,
@@ -172,419 +192,250 @@ class _ListPageState extends State<ListPage> {
   }
 }
 
+
+
+
 List getCourses() {
   return [
     Course(
-        title: "Administration des Collectivités Térritoriales",
+        title: "Assistant Manager",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 20,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This specialty, which replaces the HND in Secretarial studies trains the collaborators of General, manager, Directors of units or heads of service. Organized, rigorous, dynamic, discreet, they assist, facilitate and follow the work of the responsible in order to make it more effective. The Assistant Manager provides mainly plays the role of interface and mediation between the company and its environment. He is in charge of occupies the administration, communication, organization of work, anaid to decision and can even support a specialized file or organize an event.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Assistant of managers, Assistant of directors, Administrative Assistants, Sales assistant, Public relations assistant, Assistant of human resources, Office manager."
     ),
     Course(
-        title: "Comptabilité et Finances publiques",
+        title: "Project Management",
         //level: "Beginner",
         //indicatorValue: 0.33,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to train technicians capable of leading projects of enterprises in all sectors (industrial, service, commercial, technological and cultural), through the development of the enterprise and the acquisition of theoretical and practical knowledge in project management.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Assistant project manager, Assistant marketer, Officer responsible for public relations, Planner of the project."
     ),
     Course(
-        title: "Fiscalité des Collectivités Térritoriales",
+        title: "Human Resource Management",
         //level: "Intermidiate",
         //indicatorValue: 0.66,
         price: 30,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to train specialists in the administrative follow-up of the personnel (contracts, absences, leaves, medical visits, declarations to labour organizations) and offering refreshment courses in line with the labour code; the regulation of work and the human resource policy of the enterprise.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Assistant human resource manager, Assistant to the person in charge of human resources, Assistant to the directorate, Officer in charge of recruitment, Manager of salaries."
     ),
     Course(
-        title: "Comptabilité et Gestion des Entreprises",
+        title: "Logistics and Transports",
         //level: "Intermidiate",
         //indicatorValue: 0.66,
         price: 30,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to train experts in the organization and management of logistics and transport in the local, regional and international markets, taking into account the complementary modes of transport and sustainable development. They will in this exercise have to master foreign languages, communication and negotiation techniques, management techniques, and optimizing flow of goods, management of warehouses, and the exploitation of urban transport network.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Manager of transport units, Inventory Manager, Warehouse, Stock Control and Store Keeper, Purchasing manager, Logistics Engineer, Supply Chain Manager, International Logistics Manager, Analyst, Logistics Consultant, Transport and Logistics Services Provider, Authorized customs agent, Controller of SGS, Import and Export agent, Intermedaite staff members of the Maritime Administration, Port Officials/Administrators, Shipping Line Personnel, Shipping Agency Personnel, Maritime Controllers, Ship Brokers, Customs Brokers, Consolidators, Martime/Shipping Teachers, Marine Insurance Officials/Personnel, Customs Officials, Logistics Officers, Transport Officers, Supply Chain Officers, Commercial Managers, Freight Managers, Delivery Officers, Terminal Operators."
     ),
     Course(
-        title: "Gestion Logistique et Transport",
+        title: "Local Goverment Management\n"
+            "Local Goverment Administration",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This specialty aims to train senior technicians responsible for the management of municipalities, divisions, regions and groupings using the innovative methods of management and finance such as: retrospective and prospective financial and fiscal analysis; intercommunal strategy and pooling of means; decentralized cooperation; choice of investments; financial communication; the consolidation of accounts and risks ; the management of debts and treasuries with juridico-financial stakes borrowings ; the automation of programs of engagement and financial regulation.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Public accountants, Paying Treasurers, Cashiers, Finance officers."
     ),
     Course(
-        title: "Gestion des ONG",
+        title: "Local Goverment Management\n"
+            "Local Goverment Accounting and public finances",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This specialty aims to train senior technicians responsible for the management of municipalities, departments, regions and groups through innovative management and financing methods such as: retrospective and prospective financial and fiscal analysis; the inter-municipal strategy and the pooling of resources; decentralized cooperation; the choice of investments; financial communication; consolidation of accounts and risks; the evaluation of public service delegations; debt and cash management with legal and financial issues of loans; automation of financial commitment and settlement programs.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Public accountants, Paying treasurers, Cashiers, Receiver of finances."
     ),
     Course(
-        title: "Gestion des Ressources Humaines",
+        title: "Local Goverment Management\n"
+            "Local Goverment Taxation",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This volume provides an overview of local government financial accounting and reporting and where better practices in cash management are documented. The use of transparent procurement processes to mitigate corruption is also elaborated on while practical guidance is imparted on how and when to use debt, how to assess debt affordability, what debt to use, how to issue debt, and how to manage debt. The use of internal controls and audits to ensure efficiency and integrity is highlighted in this volume with particular emphasis on the role of external audit in combating corruption. Audit methods to detect corruption are also presented and discussed.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Agent attached to the tax collection service, Support Agent to MINATD, Collaborator to the Secretary General, to the head of administrative litigation, Responsible for studies with municipal magistrates."
     ),
     Course(
-        title: "Gestion des Projets",
+        title: "Accountancy",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to provide students with the requisite knowledge and know-how to enable them translate according to accounting rules, all the marketing and financial transactions of the enterprise and to establish corresponding documents, analyze information at their disposal necessary for the preparation of decisions to be taken by management.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Accountant in enterprises, Account collaborator in a firm, Assistant accountant in large companies, Payroll manager, Accounting manager, Treasurer, Management controller."
     ),
     Course(
-        title: "Assistant Manager",
+        title: "Marketing Trade Sale",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This specialty aims to respond to a need expressed by businesses: surround of commercial equipped, perfectly impregnated with the logic marketing, sensitized on the changing needs of the consumer and oriented toward the development of sales in an environment characterized by the competition.\n"
+            "Possible jobs opportunities:\n\n"
+            "Facilitators of the sales, Attached to the customership, Sales Representative, Responsible for the sales."
     ),
     Course(
-        title: "Management Evènementiel",
+        title: "Banking and Finance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to cover the deficit in number and quality, of human resources which credit establishments need to carry out their business. Besides, the training will provide enterprises, no matter their area of activity, with collaborators who will enable them seize the opportunities offered them by the financial system to evolve, expand and align their business to the world financial system.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Commercial banks, Credit establishments, Stock Exchange, Insurance companies, Central Bank, Bank commission, Ministries in charge of finance and economic and financial matters, Microfinance establishments, Savings banks and the service responsible for finance of the post office."
     ),
     Course(
-        title: "Banque et Finance",
+        title: "Microfinance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to cover the deficit in number and quality of human resources which credit establishments need to carry out their business. Besides, the training will provide enterprises, no matter their area of activity, with collaborators who will enable them seize the opportunities offered them by the financial system to evolve, expand and align their business to the world financial system.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Consultant in microfinance, Account manager, Cashier or teller, Paymaster, Microcredit analyst."
     ),
     Course(
-        title: "Assurance",
+        title: "Insurance",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "The objective of this specialty is to train professionals who may be called upon to perform activities of a commercial, technical and management nature relating to insurance; impact in them knowledge on subscription modalities and indemnification of companies for loss covered by insurance and social security protection through the integration of clients.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Insurance subscriber, Insurance consultant, Manage individual and collective life assurance, Underwriter and/or regulation, Collaborator of general agents or insurance brokers, Insurance expert."
     ),
     Course(
-        title: "Assistant Judiciare",
+        title: "Education Management and administration",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "Students enrolled in the BTS cycle in academic and vocational guidance are required to familiarize themselves with the educational and complementary services in terms of counseling guidance which are constantly evolving. It is precisely a question of situating oneself and structuring one's action, taking into account the roles of the various actors necessary in the education system to increase success and qualification.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Tutoring, Help (counseling), Monitoring and evaluation of educational projects, Training engineer, Training needs analysts, Planning of school life activities, Counseling and professional orientation."
     ),
     Course(
-        title: "Droit Foncier et Domanial",
+        title: "Software Engineering",
         //level: "Advanced",
         //indicatorValue: 1.0,
         price: 50,
         content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Gestion Fiscale",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Douane et Transit",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Génie Logiciel",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Infographie et Web design",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Management Evènementiel",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "E-Commerce",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Administration Scolaire",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Didactique et Développement du Curriculum",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Orientation Scolaire et Professionnelle",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Commerce Internationnal",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Marketing Commerce Vente",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Sage-femme",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Sciences infimières",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Techniques Pharmaceutiques",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
-    ),
-    Course(
-        title: "Techniques de Laboratiore et d'Analyse Médicale",
-        //level: "Advanced",
-        //indicatorValue: 1.0,
-        price: 50,
-        content:
-        "Objectifs:\n"
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.\n"
-            "Débouchés:\n"
-            "Texte"
+        "Objectifs:\n\n"
+            "This specialty aims to train specialists capable of developing computer applications in various fields, using their needs study, analysis (Merise, UML ...) and coding skills.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "IT Project Manager, Software Consultant, Application Developer, System Administrator."
     ),
 
+    Course(
+        title: "Tax Management",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "The objective of this specialization is to train officials who can centralize, liquidate, declare and defend risks noticed by the tax administration through fiscal controls; treat fiscal effects of current transactions made by clients of the chambers; taxable products, deductible costs, write-offs, depreciations and procurements, with or without VAT.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Consultants in Accountancy and Taxation, Tax Declaration Officers, Assistants in the firms of Tax Consultants, Tax Auditors, Tax Counselors, Tax Controllers, Work in the Department in charge of Legal Affairs in Companies, Middle class support administrative staff in general and of the Ministry of Finance."
+    ),
+    Course(
+        title: "Custom and Transit",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "The objective of this area of specialty is to train superior technicians who can accompany foreign business people in the preparation and accomplishment of their import and export transactions. They should equally be able to carry out formalities relating to the payment of custom duties on goods and obtain from the custom administration, on behalf of economic operators, the advantages and privileges provided by the custom law and regulations.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Authorized Customs Agent, Work in shipping companies as an authorized Custom Agent, Staff in charge of foreign trade in commercial banks, Staff in charge of transshipment in public administrations, diplomatic missions, international organizations, commercial, service and production enterprises, Management of contracts, Work in the Department in charge of Legal Affairs in Companies."
+    ),
+    Course(
+        title: "Medical and Bio-Medical Sciences\n"
+            "Nursing",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "Model critical thinking within the practice of professional nursing. ... Practice safe evidence based nursing care. Promote health through education, risk reduction, and disease prevention. Appreciate human diversity and the implications of a global health care environment.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Civil service, Hospitals and private clinics, NGOs (Non-Governmental Organizations), Self-employment, Food industry, Occupational medicine."
+    ),
+    Course(
+        title: "Medical and Bio-Medical Sciences\n"
+            "Midwifery",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "The major objective of the midwifery program is to prepare midwives who are able to provide effective and appropriate primary, secondary, and tertiary care to improve the health of women, newborns, and families in various settings.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Civil service, Hospitals and private clinics, NGOs (Non-Governmental Organizations), Self-employment, Food industry, Occupational medicine."
+    ),
+    Course(
+        title: "Medical and Bio-Medical Sciences\n"
+            "Physiotherapy",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "Physiotherapy aims to develop, maintain and restore the maximum degree of functional capacity in people with somatic, psychosomatic and organic disorders, or in those whose health or quality of life has been negatively affected. The overall objective of the course is to train professional physiotherapists.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Acupuncturist, Chiropractor, Dance movement psychotherapist, Exercise physiologist, Health service manager, Health promotion specialist, Osteopath, Personal trainer"
+    ),
+    Course(
+        title: "Medical and Bio-Medical Sciences\n"
+            "Nutrition and Dietetics",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "To understand and use applied statistics in the field of nutrition and dietetics. To design, develop, and assess individual training methods related to nutrition and dietetics that meet patients' needs. To promote and assess individual healthy eating habits.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Catering manager, Dietitian, Health service manager, Herbalist, Personal trainer, Product/process development scientist."
+    ),
+    Course(
+        title: "Medical and Bio-Medical Sciences\n"
+            "Medical Laboratory Sciences",
+        //level: "Advanced",
+        //indicatorValue: 1.0,
+        price: 50,
+        content:
+        "Objectifs:\n\n"
+            "This training aims to train executives able to detect by laboratory examinations, the various pathologies that can affect the human body.\n\n"
+            "Possible jobs opportunities:\n\n"
+            "Civil service, Hospitals and private clinics, NGOs (Non-Governmental Organizations), Self-employment, Food industry, Occupational medicine."
+    ),
   ];
-}
-
-
-
-class AppDrawer extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          _createHeader(),
-          _createDrawerItem(icon: Icons.table_chart, text: 'Programmes',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.school, text: 'Admission',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.account_balance_wallet, text: 'Pensions',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.person_add, text: 'Inscription',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.leak_add, text: 'Cours en ligne',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.event, text: 'Evènements',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.group, text: 'Partenaires',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.accessibility_new, text: 'Réseaux Sociaux',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.picture_in_picture, text: 'Galerie',),
-          new Divider(
-            color: Colors.amber.withOpacity(0.9),
-          ),
-          _createDrawerItem(icon: Icons.message, text: 'Contactez nous',),
-          ListTile(
-            title: Text('KEBHIPS'),
-            onTap: (){
-
-            },
-          )
-
-
-        ],
-      ),
-    );
-  }
-}
-
-
-Widget _createDrawerItem({
-  IconData icon, String text, GestureTapCallback onTap
-}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 0.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
-
-
-Widget _createHeader(){
-  return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/s1.jpg'))
-      ),
-  );
 }

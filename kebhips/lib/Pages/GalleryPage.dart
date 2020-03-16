@@ -4,6 +4,8 @@ import 'package:kebhips/Examples/example1.dart';
 import 'package:kebhips/Examples/example2.dart';
 import 'package:kebhips/Examples/example3.dart';
 
+import '../main.dart';
+
 
 /*
 
@@ -36,6 +38,7 @@ class _GalleryPage extends State<GalleryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(216, 245, 255, 1),
+      drawer: AppDrawer(),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
