@@ -1,6 +1,6 @@
 # kebhips
 
-A new Flutter application.
+universite au top
 
 ## Getting Started
 
